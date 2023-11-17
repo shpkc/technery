@@ -41,6 +41,12 @@ const MainText20Medium = css`
   line-height: 1.5;
 `;
 
+const MainText16Bold = css`
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+`;
+
 const MainText16Medium = css`
   font-size: 16px;
   font-weight: 500;
@@ -91,6 +97,7 @@ export const Typography = {
   SubTitle14Medium,
   MainText20Bold,
   MainText20Medium,
+  MainText16Bold,
   MainText16Medium,
   SubText14Bold,
   SubText14Regular,
