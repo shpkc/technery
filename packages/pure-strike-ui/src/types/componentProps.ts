@@ -26,6 +26,7 @@ export interface CursorProps {
 }
 
 export interface MarginProps {
+  margin?: string;
   marginTop?: number;
   marginRight?: number;
   marginBottom?: number;

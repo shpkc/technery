@@ -15,12 +15,17 @@ const getPixelByType = (value: number | string) => {
   `;
 };
 
+// NOTE : margin string으로 들어오면 그로 반환, 그 외에는 number로 처리
 const getMargin = ({
+  margin,
   marginTop,
   marginRight,
   marginBottom,
   marginLeft,
 }: MarginProps): string => {
+  if (margin) {
+    return margin;
+  }
   return `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px`;
 };
 
@@ -78,6 +83,7 @@ export const Container = styled.div<StackProps>`
   left: ${({ left }) => left && left + "px"};
 
   margin: ${getMargin};
+
   padding: ${getPadding};
   background-color: ${({ backgroundColor }) =>
     getBackgroundColor(backgroundColor)};
