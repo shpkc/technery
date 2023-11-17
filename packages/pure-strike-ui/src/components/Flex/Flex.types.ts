@@ -16,6 +16,8 @@ export type JustifyContentType =
   | "space-between"
   | "space-around";
 
+export type FlexWrapType = "nowrap" | "wrap" | "wrap-reverse";
+
 interface DirectionProps {
   sm: FlexDirectionType;
   lg: FlexDirectionType;
@@ -27,6 +29,7 @@ interface FlexOptions {
   direction?: ResponsiveDirectionType;
   alignment?: AxisAlignmentType;
   justify?: JustifyContentType;
+  flexWrap?: FlexWrapType;
   gap?: number;
   onClick?: MouseEventHandler;
 }
