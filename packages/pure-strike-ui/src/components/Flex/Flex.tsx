@@ -9,6 +9,7 @@ export const Flex = forwardRef(
       direction = "column",
       justify,
       alignment,
+      flexWrap = "nowrap",
       gap = 0,
       onClick = noop,
       children,
@@ -21,6 +22,7 @@ export const Flex = forwardRef(
         direction={direction}
         justify={justify}
         alignment={alignment}
+        flexWrap={flexWrap}
         gap={gap}
         onClick={onClick}
         {...rest}

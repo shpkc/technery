@@ -23,6 +23,7 @@ export const Flex = styled.div<FlexProps>`
 
   justify-content: ${({ justify }) => justify};
   align-items: ${({ alignment }) => alignment};
+  flex-wrap: ${({ flexWrap }) => flexWrap};
 
   gap: ${({ gap }) => gap + "px"};
 

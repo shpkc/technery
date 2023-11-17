@@ -29,8 +29,21 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# turbo
-.turbo
 
 # vercel
 .vercel
+yarn.lock
+
+
+# Rollup Plugin Visualizer
+stats.html
+
+# turbo
+.turbo
+
+
+# Stylelint cache
+.stylelintcache
+
+# Rollup cache
+.rollup.cache
