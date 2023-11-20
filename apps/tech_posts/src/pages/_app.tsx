@@ -1,12 +1,15 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
-
-// declare module "react" {
-//   interface Attributes {
-//     css?: CSSProp;
-//   }
-// }
+import { NextSeo } from "next-seo";
+import { DEFAULT_SEO } from "src/constants/seo";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  const { seoData } = pageProps;
+
+  return (
+    <>
+      {seoData ? <NextSeo {...seoData} /> : <NextSeo {...DEFAULT_SEO} />}
+      <Component {...pageProps} />
+    </>
+  );
 }
