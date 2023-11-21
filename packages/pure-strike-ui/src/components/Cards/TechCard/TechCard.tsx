@@ -27,10 +27,12 @@ export const TechCard = forwardRef(
         </Text>
         <Spacer height={4} />
         <Text typo={"Title24Bold"} cursor={"pointer"}>
-          Next.js App Router로 제품 만들기
+          {title}
         </Text>
         <Spacer height={8} />
-        <Text>이제 더 이상 Axios를 쓰지 않기로 했습니다</Text>
+        <Text typo={"MainText16Medium"} color={"gray-500"}>
+          {description}
+        </Text>
       </Styled.CardWrapper>
     );
   }
