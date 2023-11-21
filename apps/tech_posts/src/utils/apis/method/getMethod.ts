@@ -1,5 +1,5 @@
-import instance from "utils/apis/config/requestConfig";
 import { AxiosResponse } from "axios";
+import instance from "../config/requestConfig";
 
 // NOTE : get method 처리 구현부
 export const getMethod =
