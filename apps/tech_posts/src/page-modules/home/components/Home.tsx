@@ -1,7 +1,7 @@
 import { Spacer, Stack, Text } from "pure-strike-ui";
 import { TechPostList } from "./TechPostList";
 
-const Home = () => {
+const Home = ({ data }: { data }) => {
   return (
     <Stack paddingTop={60}>
       <Spacer height={100} />
@@ -13,7 +13,7 @@ const Home = () => {
         국내외 흥미로운 테크 기술 글들을 소개시켜드려요
       </Text>
       <Spacer height={100} />
-      <TechPostList />
+      <TechPostList data={data} />
     </Stack>
   );
 };
