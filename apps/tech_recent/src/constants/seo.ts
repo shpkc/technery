@@ -1,11 +1,11 @@
 export const DEFAULT_SEO = {
-  title: "기술 블로그 모음 | Tech Pin",
+  title: "기술 블로그 모음 | Tech Recent",
   description: "국내외 다양한 기술 블로그들을 모아드려요.",
-  keyword: "개발 블로그, Tech Blog",
+  keyword: "기술 블로그 모음 | Tech Recent",
   backgroundColor: "blue",
-  canonical: "https://www.teveloper.me/",
+  canonical: "https://tech-recent.vercel.app/",
   openGraph: {
-    url: "https://www.teveloper.me/",
+    url: "https://tech-recent.vercel.app/",
     title: "기술 블로그 모음 | Tech Pin",
     description: "국내외 다양한 기술 블로그들을 모아드려요.",
     images: [

@@ -7,10 +7,11 @@ export const getMethod =
   async (mapper?: (data: AxiosResponse["data"]) => void) => {
     const axiosConfig = instance;
     const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    const apiKey = `?apikey=${process.env.NEXT_PUBLIC_API_KEY}`;
     try {
       const response = await axiosConfig({
         method: "get",
-        url: `${baseUrl}${url}`,
+        url: `${baseUrl}${url}${apiKey}`,
         ...options,
       });
       return mapper ? mapper(response.data) : response.data;

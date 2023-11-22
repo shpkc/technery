@@ -13,7 +13,6 @@ const defaultHeaders = {
 
 // NOTE : 요청 인스턴스
 const instance = axios.create({
-  withCredentials: true,
   headers: defaultHeaders,
 });
 
