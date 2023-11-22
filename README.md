@@ -1,7 +1,5 @@
 <img src="https://i.imgur.com/EtwfVa9.png">
 
-<br/>
-
 # [Tech Recent](https://tech-recent.vercel.app/)
 
 ## Introduction
