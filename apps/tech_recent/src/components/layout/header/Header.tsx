@@ -16,7 +16,7 @@ export const Header = () => {
     >
       <Flex direction={"row"} justify={"space-between"} alignment={"center"}>
         <Link href={"/"}>
-          <Text typo={"Title24Bold"}>TECH PIN</Text>
+          <Text typo={"Title24Bold"}>TECH RECENT</Text>
         </Link>
         <Icon source={SearchIcon} />
       </Flex>
