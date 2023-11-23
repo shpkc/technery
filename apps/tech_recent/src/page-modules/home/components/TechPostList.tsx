@@ -7,18 +7,19 @@ import { PostItemInterface } from "../types/posts";
 export const TechPostList = () => {
   const { data, isLoading } = useGetFetch({
     key: ["posts"],
-    url: "posts",
+    url: "posts?order=id.desc",
   });
   if (isLoading) {
     return <Loading />;
   }
+
+  const onClickCard = React.useCallback((link: string) => {
+    window.open(link);
+  }, []);
   return (
     <Stack width={1100} margin={"0 auto"}>
       <Grid>
         {data?.map((item: PostItemInterface) => {
-          const onClickCard = () => {
-            window.open(item.link);
-          };
           return (
             <TechCard
               key={item.id}
@@ -27,7 +28,7 @@ export const TechPostList = () => {
               description={item.description}
               category={item.category}
               created_at={item.created_at}
-              onClick={onClickCard}
+              onClick={() => onClickCard(item.link)}
             />
           );
         })}

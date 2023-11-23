@@ -23,7 +23,7 @@ export const TechCard = forwardRef(
         <Styled.CardThumbnail thumbnail={thumbnail} />
         <Spacer height={20} />
         <Text typo={"SubTitle14Medium"} color={"gray-600"}>
-          #Front
+          #{category}
         </Text>
         <Spacer height={4} />
         <Text typo={"Title24Bold"} cursor={"pointer"}>
