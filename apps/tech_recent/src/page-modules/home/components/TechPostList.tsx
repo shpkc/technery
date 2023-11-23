@@ -9,13 +9,15 @@ export const TechPostList = () => {
     key: ["posts"],
     url: "posts?order=id.desc",
   });
-  if (isLoading) {
-    return <Loading />;
-  }
 
   const onClickCard = React.useCallback((link: string) => {
     window.open(link);
   }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <Stack width={1100} margin={"0 auto"}>
       <Grid>
