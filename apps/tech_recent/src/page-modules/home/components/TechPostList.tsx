@@ -1,26 +1,53 @@
-import { Grid, Stack, TechCard } from "pure-strike-ui";
+import { Button, Flex, Grid, Spacer, Stack, TechCard } from "pure-strike-ui";
 import React from "react";
 import { Loading } from "src/components/loading/Loading";
+import { CATEGORY_LIST } from "src/page-modules/constants/category";
 import { useGetFetch } from "src/utils/apis/query/useGetFecth";
+import {
+  ButtonSize,
+  ButtonStyleVariant,
+} from "~components/Button/Button.types";
 import { PostItemInterface } from "../types/posts";
 
 export const TechPostList = () => {
-  const { data, isLoading } = useGetFetch({
-    key: ["posts"],
-    url: "posts?order=id.desc",
+  const [category, setCategory] = React.useState("");
+  const { data, isLoading, isFetching } = useGetFetch({
+    key: ["posts", category],
+    url:
+      category !== ""
+        ? `posts?order=id.desc&category=plfts.${category}`
+        : `posts?order=id.desc`,
   });
 
   const onClickCard = React.useCallback((link: string) => {
     window.open(link);
   }, []);
 
-  if (isLoading) {
+  const onClickCategory = React.useCallback(
+    (category: string) => {
+      setCategory(category);
+    },
+    [category]
+  );
+
+  if (isFetching) {
     return <Loading />;
   }
-
   return (
     <Stack width={1100} margin={"0 auto"}>
-      <Grid>
+      <Flex direction={"row"} gap={8}>
+        {CATEGORY_LIST.map((item) => (
+          <Button
+            key={item.value}
+            text={item.name}
+            size={ButtonSize.SMALL}
+            styleVariant={ButtonStyleVariant.Primary}
+            onClick={() => onClickCategory(item.value)}
+          />
+        ))}
+      </Flex>
+      <Spacer height={16} />
+      <Grid gridTemplateColums={3} gridColumnGap={30} gridRowGap={80}>
         {data?.map((item: PostItemInterface) => {
           return (
             <TechCard
