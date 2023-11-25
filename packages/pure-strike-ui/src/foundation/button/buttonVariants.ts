@@ -2,11 +2,16 @@ import { css } from "styled-components";
 import { Palette } from "../colors/palette";
 
 const Primary = css`
-  color: white;
-  background-color: ${Palette["orange-200"]};
+  background-color: ${Palette.white};
+  border: 1px solid ${Palette["gray-300"]};
+  transition: 0.1s ease-in-out;
   &:disabled {
     background-color: ${Palette["gray-200"]};
     color: ${Palette["gray-400"]};
+  }
+  &:hover {
+    background-color: ${Palette["black-origin"]};
+    color: white;
   }
 `;
 
