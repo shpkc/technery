@@ -1,7 +1,7 @@
 export const DEFAULT_SEO = {
-  title: "기술 블로그 모음 | Tech Recent",
+  title: "기술 블로그 모음 | 테크너리",
   description: "국내외 다양한 기술 블로그들을 모아드려요.",
-  keyword: "기술 블로그 모음 | Tech Recent",
+  keyword: "기술 블로그 모음 | 테크너리",
   backgroundColor: "blue",
   canonical: "https://tech-recent.vercel.app/",
   openGraph: {
