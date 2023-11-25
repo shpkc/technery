@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/EtwfVa9.png">
+<img src="https://i.imgur.com/QGp88cp.png">
 
 # [TECHNERY](https://tech-recent.vercel.app/)
 
