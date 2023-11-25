@@ -11,7 +11,7 @@ import { PostItemInterface } from "../types/posts";
 
 export const TechPostList = () => {
   const [category, setCategory] = React.useState("");
-  const { data, isLoading, isFetching } = useGetFetch({
+  const { data, isFetching } = useGetFetch({
     key: ["posts", category],
     url:
       category !== ""
@@ -30,9 +30,6 @@ export const TechPostList = () => {
     [category]
   );
 
-  if (isFetching) {
-    return <Loading />;
-  }
   return (
     <Stack width={1100} margin={"0 auto"}>
       <Flex direction={"row"} gap={8}>
@@ -47,6 +44,7 @@ export const TechPostList = () => {
         ))}
       </Flex>
       <Spacer height={16} />
+      {isFetching && <Loading />}
       <Grid gridTemplateColums={3} gridColumnGap={30} gridRowGap={80}>
         {data?.map((item: PostItemInterface) => {
           return (
