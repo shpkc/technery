@@ -3,7 +3,25 @@ import * as Styled from "./Grid.styled";
 import { GridProps } from "./Grid.types";
 
 export const Grid = forwardRef(
-  ({ children, ...rest }: GridProps, forwardRef) => {
-    return <Styled.GridWrapper {...rest}>{children}</Styled.GridWrapper>;
+  (
+    {
+      gridTemplateColums,
+      gridColumnGap = 0,
+      gridRowGap = 0,
+      children,
+      ...rest
+    }: GridProps,
+    forwardRef
+  ) => {
+    return (
+      <Styled.GridWrapper
+        gridTemplateColums={gridTemplateColums}
+        gridColumnGap={gridColumnGap}
+        gridRowGap={gridRowGap}
+        {...rest}
+      >
+        {children}
+      </Styled.GridWrapper>
+    );
   }
 );
