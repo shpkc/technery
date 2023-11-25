@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/EtwfVa9.png">
 
-# [Tech Recent](https://tech-recent.vercel.app/)
+# [TECHNERY](https://tech-recent.vercel.app/)
 
 ## Introduction
 
