@@ -3,6 +3,7 @@ import React from "react";
 import { Loading } from "src/components/loading/Loading";
 import { CATEGORY_LIST } from "src/page-modules/constants/category";
 import { useGetFetch } from "src/utils/apis/query/useGetFecth";
+import { dateHelper } from "src/utils/date/date";
 import {
   ButtonSize,
   ButtonStyleVariant,
@@ -10,13 +11,15 @@ import {
 import { PostItemInterface } from "../types/posts";
 
 export const TechPostList = () => {
+  const { oneMonthAgo } = dateHelper();
+
   const [category, setCategory] = React.useState("");
   const { data, isFetching } = useGetFetch({
     key: ["posts", category],
     url:
       category !== ""
-        ? `posts?order=id.desc&category=plfts.${category}`
-        : `posts?order=id.desc`,
+        ? `posts?order=id.desc&created_at=gt.${oneMonthAgo}&category=plfts.${category}`
+        : `posts?order=id.desc&created_at=gt.${oneMonthAgo}`,
   });
 
   const onClickCard = React.useCallback((link: string) => {
