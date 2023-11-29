@@ -7,6 +7,7 @@ interface TechCardOptions {
   category: string;
   thumbnail: string;
   created_at: string;
+  author: string;
   onClick?: MouseEventHandler;
 }
 

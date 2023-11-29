@@ -46,7 +46,7 @@ export const TechPostList = () => {
           />
         ))}
       </Flex>
-      <Spacer height={16} />
+      <Spacer height={18} />
       {isFetching && <Loading />}
       <Grid gridTemplateColums={3} gridColumnGap={30} gridRowGap={80}>
         {data?.map((item: PostItemInterface) => {
@@ -57,6 +57,7 @@ export const TechPostList = () => {
               thumbnail={item.thumbnail}
               description={item.description}
               category={item.category}
+              author={item.author}
               created_at={item.created_at}
               onClick={() => onClickCard(item.link)}
             />

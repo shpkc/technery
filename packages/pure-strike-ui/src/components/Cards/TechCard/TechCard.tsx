@@ -4,6 +4,7 @@ import { noop } from "~/utils/funtionUtils";
 import { TechCardProps } from "./TechCard.types";
 import { Spacer } from "~/components/Spacer";
 import { Text } from "~/components/Text";
+import { Flex } from "~/components/Flex";
 
 export const TechCard = forwardRef(
   (
@@ -12,6 +13,7 @@ export const TechCard = forwardRef(
       description,
       category,
       thumbnail,
+      author,
       onClick = noop,
       children,
       ...rest
@@ -23,16 +25,28 @@ export const TechCard = forwardRef(
         <Styled.CardThumbnail thumbnail={thumbnail} />
         <Spacer height={20} />
         <Text typo={"SubTitle14Medium"} color={"gray-600"}>
-          #{category}
+          # {category}
         </Text>
         <Spacer height={4} />
-        <Text typo={"Title24Bold"} cursor={"pointer"}>
+        <Text
+          typo={"Title24Bold"}
+          cursor={"pointer"}
+          ellipsis={true}
+          ellipsisLine={2}
+        >
           {title}
         </Text>
         <Spacer height={8} />
-        <Text typo={"MainText16Medium"} color={"gray-500"}>
+        <Text
+          typo={"MainText16Medium"}
+          color={"gray-500"}
+          ellipsis={true}
+          ellipsisLine={2}
+        >
           {description}
         </Text>
+        <Spacer height={8} />
+        <Text typo={"SubTitle14Medium"}>{author}</Text>
       </Styled.CardWrapper>
     );
   }
