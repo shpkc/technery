@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Typography, TypographyProps } from "~/foundation";
 import { ColorPaletteProps, Palette } from "~/foundation";
 import { TextProps } from "./Text.types";
@@ -22,6 +22,16 @@ const getTypoGraphy = (typo: TypographyProps) => {
   return Typography[typo];
 };
 
+const getEllipsisLineStyle = (ellipsisLine) => {
+  return css`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: ${ellipsisLine};
+  `;
+};
+
 export const TextView = styled.p<TextProps>`
   ${(props) => getTypoGraphy(props.typo as TypographyProps)};
   color: ${(props) => getTextColor(props.color as ColorPaletteProps)};
@@ -29,6 +39,8 @@ export const TextView = styled.p<TextProps>`
   margin: ${getMargin};
   cursor: ${({ cursor }) => cursor};
   text-align: ${({ align }) => align};
+  ${({ ellipsis, ellipsisLine }) =>
+    ellipsis && getEllipsisLineStyle(ellipsisLine)}
 `;
 
 export default TextView;

@@ -23,6 +23,8 @@ interface TextOptions {
   whitespace?: WhiteSpaceType;
   onClick?: React.MouseEventHandler;
   align?: TextAlignType;
+  ellipsis?: boolean;
+  ellipsisLine?: number;
 }
 
 export interface TextProps
