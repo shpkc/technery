@@ -5,6 +5,7 @@ export interface PostItemInterface {
   link: string;
   thumbnail: string;
   category: string;
+  author: string;
   created_at: string;
 }
 
