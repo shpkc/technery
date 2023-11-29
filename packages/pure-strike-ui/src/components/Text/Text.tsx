@@ -22,6 +22,8 @@ export const Text = forwardRef(
       whitespace = "normal",
       cursor = "inherit",
       align = "start",
+      ellipsis = false,
+      ellipsisLine = 0,
       onClick = noop,
       children,
       ...rest
@@ -43,6 +45,8 @@ export const Text = forwardRef(
         marginBottom={marginBottom || marginY || marginAll}
         marginLeft={marginLeft || marginX || marginAll}
         whitespace={whitespace}
+        ellipsis={ellipsis}
+        ellipsisLine={ellipsisLine}
         cursor={cursor}
         align={align}
         onClick={onClick}
