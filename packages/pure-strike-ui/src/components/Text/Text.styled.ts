@@ -41,6 +41,8 @@ export const TextView = styled.p<TextProps>`
   text-align: ${({ align }) => align};
   ${({ ellipsis, ellipsisLine }) =>
     ellipsis && getEllipsisLineStyle(ellipsisLine)}
+
+  word-break: break-all;
 `;
 
 export default TextView;
