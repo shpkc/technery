@@ -20,6 +20,10 @@ const GrayPalette = {
   "gray-700": "#585858",
 };
 
+const BluePalette = {
+  "blue-700": "#3182f6",
+};
+
 const NavyPalette = {
   navy: "#001437",
 };
@@ -55,6 +59,7 @@ export const Palette = {
   ...OrangePalette,
   ...GrayPalette,
   ...NavyPalette,
+  ...BluePalette,
   ...WhitePlatte,
   ...BlackPalette,
   ...StatusPalett,
