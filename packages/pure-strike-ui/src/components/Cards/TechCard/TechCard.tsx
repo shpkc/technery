@@ -51,8 +51,12 @@ export const TechCard = forwardRef(
         </Text>
         <Spacer height={8} />
         <Flex direction={"row"} justify={"space-between"} alignment={"center"}>
-          <Text typo={"SubTitle14Medium"}>{author}</Text>
-          <Text typo={"SubTitle14Medium"}>{post_created_at}</Text>
+          <Flex direction={"row"} alignment={"center"}>
+            <Text typo={"SubText14Bold"} color={"blue-700"}>
+              {author}
+            </Text>
+          </Flex>
+          <Text typo={"SubText14Regular"}>{post_created_at}</Text>
         </Flex>
       </Styled.CardWrapper>
     );
