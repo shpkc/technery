@@ -13,13 +13,13 @@ import { PostItemInterface } from "../types/posts";
 export const TechPostList = () => {
   const { oneMonthAgo } = dateHelper();
 
-  const [category, setCategory] = React.useState("");
+  const [category, setCategory] = React.useState<string>("");
   const { data, isFetching } = useGetFetch({
     key: ["posts", category],
     url:
       category !== ""
-        ? `posts?order=post_created_at.desc&created_at=gt.${oneMonthAgo}&category=plfts.${category}`
-        : `posts?order=post_created_at.desc&created_at=gt.${oneMonthAgo}`,
+        ? `posts?order=post_created_at.desc&post_created_at=gt.${oneMonthAgo}&category=plfts.${category}`
+        : `posts?post_created_at=gt.${oneMonthAgo}&order=post_created_at.desc`,
   });
 
   const onClickCard = React.useCallback((link: string) => {
