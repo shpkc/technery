@@ -7,6 +7,7 @@ export interface PostItemInterface {
   category: string;
   author: string;
   created_at: string;
+  post_created_at: string;
 }
 
 export type PostsListResponse = PostItemInterface[];

@@ -3,7 +3,7 @@ import React from "react";
 import { Loading } from "src/components/loading/Loading";
 import { CATEGORY_LIST } from "src/page-modules/constants/category";
 import { useGetFetch } from "src/utils/apis/query/useGetFecth";
-import { dateHelper } from "src/utils/date/date";
+import { dateHelper, formatDaysAgoFromDate } from "src/utils/date/date";
 import {
   ButtonSize,
   ButtonStyleVariant,
@@ -18,8 +18,8 @@ export const TechPostList = () => {
     key: ["posts", category],
     url:
       category !== ""
-        ? `posts?order=id.desc&created_at=gt.${oneMonthAgo}&category=plfts.${category}`
-        : `posts?order=id.desc&created_at=gt.${oneMonthAgo}`,
+        ? `posts?order=post_created_at.desc&created_at=gt.${oneMonthAgo}&category=plfts.${category}`
+        : `posts?order=post_created_at.desc&created_at=gt.${oneMonthAgo}`,
   });
 
   const onClickCard = React.useCallback((link: string) => {
@@ -46,10 +46,13 @@ export const TechPostList = () => {
           />
         ))}
       </Flex>
-      <Spacer height={18} />
+      <Spacer height={30} />
       {isFetching && <Loading />}
       <Grid gridTemplateColums={3} gridColumnGap={30} gridRowGap={80}>
         {data?.map((item: PostItemInterface) => {
+          const formatted_created_at = formatDaysAgoFromDate(
+            item.post_created_at
+          );
           return (
             <TechCard
               key={item.id}
@@ -59,6 +62,7 @@ export const TechPostList = () => {
               category={item.category}
               author={item.author}
               created_at={item.created_at}
+              post_created_at={formatted_created_at}
               onClick={() => onClickCard(item.link)}
             />
           );

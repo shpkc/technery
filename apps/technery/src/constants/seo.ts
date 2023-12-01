@@ -3,9 +3,9 @@ export const DEFAULT_SEO = {
   description: "국내외 다양한 기술 블로그들을 모아드려요.",
   keyword: "기술 블로그 모음 | 테크너리",
   backgroundColor: "blue",
-  canonical: "https://tech-recent.vercel.app/",
+  canonical: "https://technery.vercel.app/",
   openGraph: {
-    url: "https://tech-recent.vercel.app/",
+    url: "https://technery.vercel.app/",
     title: "기술 블로그 모음 | Tech Pin",
     description: "국내외 다양한 기술 블로그들을 모아드려요.",
     images: [
