@@ -75,7 +75,8 @@ export const Container = styled.div<StackProps>`
   min-width: ${({ width }) => width && getPixelByType(width)};
 
   height: ${({ height }) => (height ? getPixelByType(height) : "100%")};
-  min-height: ${({ height }) => height && getPixelByType(height)};
+  min-height: ${({ minHeight }) => minHeight && getPixelByType(minHeight)};
+  max-height: ${({ maxHeight }) => maxHeight && getPixelByType(maxHeight)};
 
   top: ${({ top }) => top && top + "px"};
   right: ${({ right }) => right && right + "px"};

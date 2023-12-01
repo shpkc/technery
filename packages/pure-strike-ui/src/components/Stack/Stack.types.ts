@@ -13,6 +13,8 @@ interface StackOptions {
   width?: number | string;
   maxWidth?: number | string;
   height?: number | string;
+  minHeight?: number | string;
+  maxHeight?: number | string;
   backgroundColor?: ColorPaletteProps;
   zIndex?: ZIndex;
   borderRadius?: number;
