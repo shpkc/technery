@@ -18,8 +18,6 @@ const getDirectionByResponsiveProps = ({
 
 export const Flex = styled.div<FlexProps>`
   display: flex;
-  width: 100%;
-  height: ${({ height }) => (height ? height : "100%")};
 
   justify-content: ${({ justify }) => justify};
   align-items: ${({ alignment }) => alignment};
