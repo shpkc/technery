@@ -8,6 +8,7 @@ export const CATEGORY_LIST = [
   { name: "ML", value: "ML" },
   { name: "Data", value: "Data" },
   { name: "Design", value: "Design" },
+  { name: "Security", value: "Security" },
   { name: "QA", value: "QA" },
   { name: "Team", value: "Team" },
   { name: "Service", value: "Service" },
