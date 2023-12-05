@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Sitemap: https://technery.vercel.app/sitemap.xml
+Host: https://technery.vercel.app

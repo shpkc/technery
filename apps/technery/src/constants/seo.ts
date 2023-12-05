@@ -1,19 +1,19 @@
 export const DEFAULT_SEO = {
   title: "기술 블로그 모음 | 테크너리",
   description: "국내외 다양한 기술 블로그들을 모아드려요.",
-  keyword: "기술 블로그 모음 | 테크너리",
-  backgroundColor: "blue",
-  canonical: "https://technery.vercel.app/",
+  keyword: "frontend, 기술 블로그, 테크 블로그",
+  canonical: "https://technery.vercel.app/index.html",
   openGraph: {
+    type: "article",
     url: "https://technery.vercel.app/",
-    title: "기술 블로그 모음 | Tech Pin",
+    title: "기술 블로그 모음 | 테크너리",
     description: "국내외 다양한 기술 블로그들을 모아드려요.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80",
+        url: "https://camo.githubusercontent.com/004abc48214b2ac9ef9bb5b95fca8d26556ccd599e031f912189e96591c803b2/68747470733a2f2f692e696d6775722e636f6d2f514770383863702e706e67",
         width: 800,
         height: 600,
-        alt: "Teveloper",
+        alt: "Technery",
         type: "image/jpeg",
       },
     ],
