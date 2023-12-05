@@ -10,7 +10,8 @@ const Home = () => {
       </Text>
       <Spacer height={20} />
       <Text typo={"MainText20Medium"} align={"center"} color={"gray-600"}>
-        여러 테크 블로그의 다양한 포스팅을 통해 최신 트렌드를 확인해보세요
+        테크 블로그의 다양한 포스팅을 통해 기술의 트렌드와 동향을 한눈에
+        살펴보세요
       </Text>
       <Spacer height={100} />
       <TechPostList />
