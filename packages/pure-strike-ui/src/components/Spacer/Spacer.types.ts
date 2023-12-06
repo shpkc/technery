@@ -1,8 +1,11 @@
-import { ComponentBaseProps } from "~/types/componentProps";
+import {
+  ComponentBaseProps,
+  ResponsiveStyleProps,
+} from "~/types/componentProps";
 
 interface SpacerOptions {
   width?: number;
-  height?: number;
+  height?: ResponsiveStyleProps;
 }
 
 export interface SpacerProps extends ComponentBaseProps, SpacerOptions {}
