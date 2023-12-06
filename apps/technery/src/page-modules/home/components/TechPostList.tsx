@@ -22,7 +22,6 @@ export const TechPostList = () => {
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
       const nextPage = allPages.length + 1;
-      console.log(allPages);
       return lastPage?.length === 0 || lastPage?.length < PER_PAGE
         ? undefined
         : nextPage;
@@ -49,8 +48,8 @@ export const TechPostList = () => {
   );
 
   return (
-    <Stack width={1100} margin={"0 auto"}>
-      <Flex direction={"row"} gap={8}>
+    <Stack width={["100%", "1100px"]} margin={"0 auto"}>
+      <Flex direction={"row"} gap={8} flexWrap={"wrap"}>
         {CATEGORY_LIST.map((item) => (
           <Button
             key={item.value}
@@ -61,12 +60,16 @@ export const TechPostList = () => {
           />
         ))}
       </Flex>
-      <Spacer height={30} />
+      <Spacer height={"30px"} />
       <InfiniteScrollTemplate
         nextPage={() => fetchNextPage()}
         currentCount={currentCount as number}
       >
-        <Grid gridTemplateColums={3} gridColumnGap={30} gridRowGap={80}>
+        <Grid
+          gridTemplateColums={["repeat(1, 1fr)", "repeat(3, 1fr)"]}
+          gridColumnGap={30}
+          gridRowGap={80}
+        >
           {listData?.map((item: PostItemInterface) => {
             const formatted_created_at = formatDaysAgoFromDate(
               item.post_created_at

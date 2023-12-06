@@ -25,11 +25,11 @@ export const TechCard = forwardRef(
     return (
       <Styled.CardWrapper onClick={onClick} {...rest}>
         <Styled.CardThumbnail thumbnail={thumbnail} />
-        <Spacer height={20} />
+        <Spacer height={"20px"} />
         <Text typo={"SubTitle14Medium"} color={"gray-600"}>
           # {category}
         </Text>
-        <Spacer height={4} />
+        <Spacer height={"4px"} />
         <Stack minHeight={52} maxHeight={52}>
           <Text
             typo={"Title24Bold"}
@@ -40,7 +40,7 @@ export const TechCard = forwardRef(
             {title}
           </Text>
         </Stack>
-        <Spacer height={8} />
+        <Spacer height={"8px"} />
         <Text
           typo={"MainText16Medium"}
           color={"gray-500"}
@@ -49,7 +49,7 @@ export const TechCard = forwardRef(
         >
           {description}
         </Text>
-        <Spacer height={8} />
+        <Spacer height={"8px"} />
         <Flex direction={"row"} justify={"space-between"} alignment={"center"}>
           <Flex direction={"row"} alignment={"center"}>
             <Text typo={"SubText14Bold"} color={"blue-700"}>
