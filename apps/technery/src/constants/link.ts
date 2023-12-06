@@ -1,1 +1,1 @@
-export const GITHUB_LINK = "https://github.com/shpkc";
+export const GITHUB_LINK = "https://github.com/shpkc/technery";
