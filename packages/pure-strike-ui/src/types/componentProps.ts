@@ -53,3 +53,5 @@ export interface SideContentProps<
   leftButton?: leftButton;
   rightButton?: rightButton;
 }
+
+export type ResponsiveStyleProps = string | Array<string>;
