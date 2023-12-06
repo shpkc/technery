@@ -1,7 +1,10 @@
-import { ComponentBaseProps } from "~/types/componentProps";
+import {
+  ComponentBaseProps,
+  ResponsiveStyleProps,
+} from "~/types/componentProps";
 
 interface GridOptions {
-  gridTemplateColums: number;
+  gridTemplateColums: ResponsiveStyleProps;
   gridColumnGap?: number;
   gridRowGap?: number;
   gap?: number;
