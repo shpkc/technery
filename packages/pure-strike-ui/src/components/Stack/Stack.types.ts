@@ -2,7 +2,7 @@ import { ColorPaletteProps, ZIndex } from "~/foundation";
 import {
   ComponentBaseProps,
   MarginProps,
-  PaddingProps,
+  ResponsiveStyleProps,
 } from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
 
@@ -10,7 +10,8 @@ type PositionType = "static" | "aboslute" | "fixed" | "relative" | "sticky";
 
 interface StackOptions {
   position?: PositionType;
-  width?: number | string;
+  width?: ResponsiveStyleProps;
+  padding?: ResponsiveStyleProps;
   maxWidth?: number | string;
   height?: number | string;
   minHeight?: number | string;
@@ -41,6 +42,5 @@ export interface StackProps
   extends ComponentBaseProps,
     PositionLocationProps,
     MarginProps,
-    PaddingProps,
     BorderProps,
     StackOptions {}
