@@ -2,10 +2,10 @@ export const DEFAULT_SEO = {
   title: "기술 블로그 모음 | 테크너리",
   description: "국내외 다양한 기술 블로그들을 모아드려요.",
   keyword: "frontend, 기술 블로그, 테크 블로그",
-  canonical: "https://technery.vercel.app/index.html",
+  canonical: "https://technery.vercel.app",
   openGraph: {
     type: "article",
-    url: "https://technery.vercel.app/",
+    url: "https://technery.vercel.app",
     title: "기술 블로그 모음 | 테크너리",
     description: "국내외 다양한 기술 블로그들을 모아드려요.",
     images: [
