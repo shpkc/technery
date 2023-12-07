@@ -32,6 +32,7 @@ interface ButtonOptions {
   text?: string;
   loading?: boolean;
   active?: boolean;
+  selected?: boolean;
   styleVariant?: ButtonStyleVariant;
   colorVariant?: ButtonColorVariant;
   onClick?: MouseEventHandler;

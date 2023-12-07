@@ -50,15 +50,19 @@ export const TechPostList = () => {
   return (
     <Stack width={["100%", "1100px"]} margin={"0 auto"}>
       <Flex direction={"row"} gap={8} flexWrap={"wrap"}>
-        {CATEGORY_LIST.map((item) => (
-          <Button
-            key={item.value}
-            text={item.name}
-            size={ButtonSize.SMALL}
-            styleVariant={ButtonStyleVariant.Primary}
-            onClick={() => onClickCategory(item.value)}
-          />
-        ))}
+        {CATEGORY_LIST.map((item) => {
+          const isSelected = category === item.name;
+          return (
+            <Button
+              key={item.value}
+              text={item.name}
+              size={ButtonSize.SMALL}
+              styleVariant={ButtonStyleVariant.Primary}
+              selected={isSelected}
+              onClick={() => onClickCategory(item.value)}
+            />
+          );
+        })}
       </Flex>
       <Spacer height={"30px"} />
       <InfiniteScrollTemplate
