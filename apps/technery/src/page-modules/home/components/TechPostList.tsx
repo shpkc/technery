@@ -5,7 +5,7 @@ import { InfiniteScrollTemplate } from "src/components/infinite/InfiniteScrollTe
 import { Loading } from "src/components/loading/Loading";
 import { PER_PAGE } from "src/constants/page";
 import { CATEGORY_LIST } from "src/page-modules/constants/category";
-import { formatDaysAgoFromDate } from "src/utils/date/date";
+import { formatBetweenTime } from "src/utils/date/date";
 import {
   ButtonSize,
   ButtonStyleVariant,
@@ -71,7 +71,7 @@ export const TechPostList = () => {
           gridRowGap={80}
         >
           {listData?.map((item: PostItemInterface) => {
-            const formatted_created_at = formatDaysAgoFromDate(
+            const formatted_created_at = formatBetweenTime(
               item.post_created_at
             );
             return (

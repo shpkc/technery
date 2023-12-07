@@ -14,15 +14,18 @@ export const dateHelper = () => {
   return { threeMonthAgo: formattedDate };
 };
 
-export const formatDaysAgoFromDate = (targetDate: string): string => {
-  const currentDate: Date = new Date();
-  const givenDate: Date = new Date(targetDate);
-
-  const millisecondsPerDay: number = 24 * 60 * 60 * 1000;
-
-  const daysDifference: number = Math.floor(
-    (currentDate.getTime() - givenDate.getTime()) / millisecondsPerDay
+export const formatBetweenTime = (targetDate: string): string => {
+  const today = new Date();
+  const timeValue = new Date(targetDate);
+  const betweenTime = Math.floor(
+    ((today as any) - (timeValue as any)) / (1000 * 60)
   );
 
-  return daysDifference === 0 ? "오늘" : `${daysDifference}일 전`;
+  if (betweenTime < 1) return "방금전";
+  if (betweenTime < 60) return `${betweenTime}분전`;
+  if (betweenTime / 60 < 24) return `${Math.floor(betweenTime / 60)}시간전`;
+  if (betweenTime / (60 * 24) < 365)
+    return `${Math.floor(betweenTime / (60 * 24))}일전`;
+
+  return `${Math.floor(betweenTime / (60 * 24 * 365))}년전`;
 };
