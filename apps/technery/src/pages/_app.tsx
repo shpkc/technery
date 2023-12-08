@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Script from "next/script";
 import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,6 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <Component {...pageProps} />
+        <SpeedInsights />
       </StyleSheetManager>
       <Analytics mode={"production"} />;
     </QueryClientProvider>
