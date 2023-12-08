@@ -12,6 +12,9 @@ import {
 } from "~components/Button/Button.types";
 import { getPostList } from "../core/_requests";
 import { PostItemInterface } from "../types/posts";
+import { useMutate } from "src/utils/apis/query/useMutate";
+import { postMethod } from "src/utils/apis/method/postMethod";
+import { patchMethod } from "src/utils/apis/method/patchMethod";
 
 export const TechPostList = () => {
   const [category, setCategory] = React.useState<string>("");
@@ -28,6 +31,17 @@ export const TechPostList = () => {
     },
   });
 
+  const { mutate: updateViewCountMutate } = useMutate({
+    fetch: ({ id, viewCount }) =>
+      patchMethod({
+        url: `posts?id=eq.${id}`,
+        body: {
+          viewCount: viewCount + 1,
+        },
+      })(),
+    refetchKey: ["posts"],
+  });
+
   const currentCount = React.useMemo(() => {
     return data?.pages.flatMap((page) => page).length;
   }, [data]);
@@ -36,8 +50,10 @@ export const TechPostList = () => {
     return data?.pages.flatMap((page) => page);
   }, [data]);
 
-  const onClickCard = React.useCallback((link: string) => {
+  // NOTE : 클릭시 viewCount 업데이트 & 링크 창 열기
+  const onClickCard = React.useCallback(({ id, viewCount, link }) => {
     window.open(link);
+    updateViewCountMutate({ id, viewCount });
   }, []);
 
   const onClickCategory = React.useCallback(
@@ -75,20 +91,31 @@ export const TechPostList = () => {
           gridRowGap={80}
         >
           {listData?.map((item: PostItemInterface) => {
-            const formatted_created_at = formatBetweenTime(
-              item.post_created_at
-            );
+            const {
+              id,
+              title,
+              thumbnail,
+              description,
+              category,
+              author,
+              post_created_at,
+              created_at,
+              viewCount,
+              link,
+            } = item;
+            const formatted_created_at = formatBetweenTime(post_created_at);
             return (
               <TechCard
-                key={item.id}
-                title={item.title}
-                thumbnail={item.thumbnail}
-                description={item.description}
-                category={item.category}
-                author={item.author}
-                created_at={item.created_at}
+                key={id}
+                title={title}
+                thumbnail={thumbnail}
+                description={description}
+                category={category}
+                author={author}
+                created_at={created_at}
                 post_created_at={formatted_created_at}
-                onClick={() => onClickCard(item.link)}
+                viewCount={viewCount}
+                onClick={() => onClickCard({ id, viewCount, link })}
               />
             );
           })}
