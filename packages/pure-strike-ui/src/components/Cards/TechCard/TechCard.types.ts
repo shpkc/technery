@@ -9,6 +9,7 @@ interface TechCardOptions {
   created_at: string;
   post_created_at: string;
   author: string;
+  viewCount: number;
   onClick?: MouseEventHandler;
 }
 

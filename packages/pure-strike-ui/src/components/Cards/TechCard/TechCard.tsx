@@ -6,6 +6,9 @@ import { Spacer } from "~/components/Spacer";
 import { Text } from "~/components/Text";
 import { Flex } from "~/components/Flex";
 import { Stack } from "~/components/Stack";
+import { Icon } from "~/components/Icon";
+import { ViewIcon } from "pure-strike-icons";
+import { IconSize } from "~/components/Icon/Icon.types";
 
 export const TechCard = forwardRef(
   (
@@ -15,6 +18,7 @@ export const TechCard = forwardRef(
       category,
       thumbnail,
       author,
+      viewCount,
       post_created_at,
       onClick = noop,
       children,
@@ -51,12 +55,17 @@ export const TechCard = forwardRef(
         </Text>
         <Spacer height={"8px"} />
         <Flex direction={"row"} justify={"space-between"} alignment={"center"}>
+          <Text typo={"SubText14Bold"} color={"blue-700"}>
+            {author}
+          </Text>
           <Flex direction={"row"} alignment={"center"}>
-            <Text typo={"SubText14Bold"} color={"blue-700"}>
-              {author}
+            <Text typo={"SubText14Regular"}>{post_created_at}</Text>
+            <Spacer width={8} />
+            <Icon source={ViewIcon} size={IconSize.Size20} color={"gray-500"} />
+            <Text typo={"SubText14Regular"} color={"gray-500"}>
+              {viewCount}
             </Text>
           </Flex>
-          <Text typo={"SubText14Regular"}>{post_created_at}</Text>
         </Flex>
       </Styled.CardWrapper>
     );

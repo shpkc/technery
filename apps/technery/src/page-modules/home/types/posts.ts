@@ -6,6 +6,7 @@ export interface PostItemInterface {
   thumbnail: string;
   category: string;
   author: string;
+  viewCount: number;
   created_at: string;
   post_created_at: string;
 }
