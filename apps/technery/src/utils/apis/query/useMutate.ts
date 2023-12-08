@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 
 interface MutateProps<T, P> {
-  fetch: (params: P) => Promise<T>;
+  fetch: (params: any) => Promise<T>;
   refetchKey?: string[];
   updater?: {
     key: string[];
