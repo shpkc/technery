@@ -9,7 +9,7 @@ export declare type BezierIcon = IconSource & { __bezier__icon: true }
 export declare function isBezierIcon(arg: unknown): arg is BezierIcon
 export declare function createBezierIcon(icon: IconSource): BezierIcon
 
-export declare type IconName = 'arrow_down' | 'arrow_up' | 'check_box_off' | 'close' | 'error' | 'menu' | 'search'
+export declare type IconName = 'arrow_down' | 'arrow_up' | 'check_box_off' | 'close' | 'error' | 'menu' | 'search' | 'view'
 /**
  * @deprecated If you import this module, all icons are bundled, so please import and use the individual icons.
  * @example
@@ -24,3 +24,4 @@ export declare const CloseIcon: BezierIcon
 export declare const ErrorIcon: BezierIcon
 export declare const MenuIcon: BezierIcon
 export declare const SearchIcon: BezierIcon
+export declare const ViewIcon: BezierIcon
