@@ -9,13 +9,6 @@ export const Text = forwardRef(
       as,
       color,
       typo,
-      marginTop = 0,
-      marginRight = 0,
-      marginBottom = 0,
-      marginLeft = 0,
-      marginX = 0,
-      marginY = 0,
-      marginAll = 0,
       style,
       id,
       className,
@@ -24,7 +17,9 @@ export const Text = forwardRef(
       align = "start",
       ellipsis = false,
       ellipsisLine = 0,
+      hover = false,
       onClick = noop,
+
       children,
       ...rest
     }: TextProps,
@@ -40,15 +35,12 @@ export const Text = forwardRef(
         className={className}
         color={color}
         typo={typo}
-        marginTop={marginTop || marginY || marginAll}
-        marginRight={marginRight || marginX || marginAll}
-        marginBottom={marginBottom || marginY || marginAll}
-        marginLeft={marginLeft || marginX || marginAll}
         whitespace={whitespace}
         ellipsis={ellipsis}
         ellipsisLine={ellipsisLine}
         cursor={cursor}
         align={align}
+        hover={hover}
         onClick={onClick}
       >
         {children}

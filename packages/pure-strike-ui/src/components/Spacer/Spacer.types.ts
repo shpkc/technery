@@ -4,7 +4,7 @@ import {
 } from "~/types/componentProps";
 
 interface SpacerOptions {
-  width?: number;
+  width?: ResponsiveStyleProps;
   height?: ResponsiveStyleProps;
 }
 

@@ -13,7 +13,9 @@ export const getResponsiveStyles = (cssProperty, values) => {
         }
       `;
   }
+  // NOTE : string 형식이면 value 그대로 사용, 아니면 px 붙여서 사용
+  const convertedValues = typeof values === "string" ? values : values + "px";
   return `
-      ${cssProperty}: ${values};
+      ${cssProperty}: ${convertedValues};
     `;
 };

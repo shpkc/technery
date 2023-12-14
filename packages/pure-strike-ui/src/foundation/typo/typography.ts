@@ -1,110 +1,110 @@
 import { css } from "styled-components";
 
-const Title48Black = css`
+const Text48Black = css`
   font-size: 48px;
   font-weight: 900;
   line-height: 1.2;
 `;
 
-const Title32Bold = css`
+const Text32Bold = css`
   font-size: 32px;
   font-weight: 700;
   line-height: 1.6;
 `;
-const Title28Bold = css`
+const Text28Bold = css`
   font-size: 28px;
   font-weight: 700;
   line-height: 1.1;
 `;
 
-const Title24Bold = css`
+const Text24Bold = css`
   font-size: 24px;
   font-weight: 700;
   line-height: 1.1;
 `;
 
-const SubTitle14Medium = css`
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4;
-`;
-
-const MainText20Bold = css`
+const Text20Bold = css`
   font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
 `;
 
-const MainText20Medium = css`
+const Text20Medium = css`
   font-size: 20px;
   font-weight: 500;
   line-height: 1.5;
 `;
 
-const MainText16Bold = css`
+const Text20Regular = css`
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+`;
+
+const Text16Bold = css`
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
 `;
 
-const MainText16Medium = css`
+const Text16Medium = css`
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
 `;
 
-const SubText14Bold = css`
+const Text16Regular = css`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+`;
+
+const Text14Bold = css`
   font-size: 14px;
   font-weight: 700;
   line-height: 1.4;
 `;
 
-const SubText14Regular = css`
+const Text14Regular = css`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4;
 `;
 
-const SubText12Bold = css`
+const Text14Medium = css`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+`;
+
+const Text12Bold = css`
   font-size: 12px;
   font-weight: 700;
   line-height: 1.3;
 `;
 
-const SubText12Regular = css`
+const Text12Regular = css`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.36;
 `;
 
-const ModalHeader = css`
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 24px;
-`;
-
-const ModalBodyMedium = css`
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-`;
-
 export const Typography = {
-  Title48Black,
-  Title32Bold,
-  Title28Bold,
-  Title24Bold,
-  SubTitle14Medium,
-  MainText20Bold,
-  MainText20Medium,
-  MainText16Bold,
-  MainText16Medium,
-  SubText14Bold,
-  SubText14Regular,
-  SubText12Bold,
-  SubText12Regular,
-  ModalHeader,
-  ModalBodyMedium,
+  Text48Black,
+  Text32Bold,
+  Text28Bold,
+  Text24Bold,
+  Text20Bold,
+  Text20Medium,
+  Text20Regular,
+  Text16Bold,
+  Text16Medium,
+  Text16Regular,
+  Text14Bold,
+  Text14Medium,
+  Text14Regular,
+  Text12Bold,
+  Text12Regular,
 };
 
 // NOTE : 키값으로 type 생성
