@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import { NextSeo } from "next-seo";
@@ -8,6 +7,7 @@ import Script from "next/script";
 import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GlobalStyle } from "src/styles/globals";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,10 +43,11 @@ export default function App({ Component, pageProps }: AppProps) {
             : true;
         }}
       >
+        <GlobalStyle />
         <Component {...pageProps} />
         <SpeedInsights />
       </StyleSheetManager>
-      <Analytics mode={"production"} />;
+      <Analytics mode={"production"} />
     </QueryClientProvider>
   );
 }

@@ -11,6 +11,7 @@ type PositionType = "static" | "aboslute" | "fixed" | "relative" | "sticky";
 interface StackOptions {
   position?: PositionType;
   width?: ResponsiveStyleProps;
+  margin?: ResponsiveStyleProps;
   padding?: ResponsiveStyleProps;
   maxWidth?: number | string;
   height?: number | string;

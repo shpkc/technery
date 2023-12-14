@@ -9,4 +9,6 @@ export * from "./src/components/Toast";
 export * from "./src/components/Flex";
 export * from "./src/components/Modal";
 export * from "./src/components/Cards/TechCard";
+export * from "./src/components/Cards/TopicCard";
 export * from "./src/components/Grid";
+export * from "./src/components/Responsive";

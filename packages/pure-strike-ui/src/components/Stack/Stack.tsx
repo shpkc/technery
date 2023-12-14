@@ -10,18 +10,12 @@ export const Stack = forwardRef(
       position,
       top,
       width,
-      padding,
       maxWidth,
       height,
       minHeight,
       maxHeight,
-      marginTop = 0,
-      marginRight = 0,
-      marginBottom = 0,
-      marginLeft = 0,
-      marginX = 0,
-      marginY = 0,
-      marginAll = 0,
+      margin,
+      padding,
       borderWidth,
       borderColor,
       borderBottom,
@@ -39,6 +33,7 @@ export const Stack = forwardRef(
         position={position}
         top={top}
         width={width}
+        margin={margin}
         padding={padding}
         maxWidth={maxWidth}
         height={height}

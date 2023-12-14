@@ -5,6 +5,7 @@ import {
   MarginProps,
   type ComponentBaseProps,
   CursorProps,
+  HoverProps,
 } from "~/types/componentProps";
 
 type WhiteSpaceType =
@@ -31,4 +32,5 @@ export interface TextProps
   extends ComponentBaseProps,
     MarginProps,
     CursorProps,
+    HoverProps,
     TextOptions {}

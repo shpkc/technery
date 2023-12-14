@@ -1,4 +1,7 @@
-import { ComponentBaseProps } from "~/types/componentProps";
+import {
+  ComponentBaseProps,
+  ResponsiveStyleProps,
+} from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
 
 export type FlexDirectionType = "column" | "row";
@@ -18,15 +21,9 @@ export type JustifyContentType =
 
 export type FlexWrapType = "nowrap" | "wrap" | "wrap-reverse";
 
-interface DirectionProps {
-  sm: FlexDirectionType;
-  lg: FlexDirectionType;
-}
-export type ResponsiveDirectionType = DirectionProps | FlexDirectionType;
-
 interface FlexOptions {
   height?: string;
-  direction?: ResponsiveDirectionType;
+  direction?: ResponsiveStyleProps<FlexDirectionType>;
   alignment?: AxisAlignmentType;
   justify?: JustifyContentType;
   flexWrap?: FlexWrapType;

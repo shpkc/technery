@@ -16,29 +16,6 @@ const getPixelByType = (value: number | string) => {
   `;
 };
 
-// NOTE : margin string으로 들어오면 그로 반환, 그 외에는 number로 처리
-const getMargin = ({
-  margin,
-  marginTop,
-  marginRight,
-  marginBottom,
-  marginLeft,
-}: MarginProps): string => {
-  if (margin) {
-    return margin;
-  }
-  return `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px`;
-};
-
-const getPadding = ({
-  paddingTop,
-  paddingRight,
-  paddingBottom,
-  paddingLeft,
-}: PaddingProps): string => {
-  return `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px`;
-};
-
 const getBorderStyle = ({
   borderWidth,
   borderTop,
@@ -83,9 +60,8 @@ export const Container = styled.div<StackProps>`
   bottom: ${({ bottom }) => bottom && bottom + "px"};
   left: ${({ left }) => left && left + "px"};
 
-  margin: ${getMargin};
-
-  ${(props) => getResponsiveStyles("padding", props.padding)}
+  ${(props) => getResponsiveStyles("margin", props.margin)};
+  ${(props) => getResponsiveStyles("padding", props.padding)};
 
   background-color: ${({ backgroundColor }) =>
     getBackgroundColor(backgroundColor)};

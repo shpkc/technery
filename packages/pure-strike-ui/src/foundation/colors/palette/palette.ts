@@ -12,12 +12,13 @@ const OrangePalette = {
 
 const GrayPalette = {
   "gray-100": "#F7F7F7",
-  "gray-200": "#F5F5F5",
+  "gray-200": "#F5F5F4",
   "gray-300": "#DEDEDE",
   "gray-400": "#C4C4C4",
   "gray-500": "#7E7E7E",
   "gray-600": "#757575",
   "gray-700": "#585858",
+  "gray-800": "#78716C",
 };
 
 const BluePalette = {

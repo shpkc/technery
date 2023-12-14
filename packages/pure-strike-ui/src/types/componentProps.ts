@@ -25,8 +25,15 @@ export interface CursorProps {
   cursor?: "auto" | "inherit" | "default" | "pointer" | "not-allowed";
 }
 
+export interface DirectionProps {
+  direction?: "row" | "column";
+}
+
+export interface HoverProps {
+  hover?: boolean;
+}
+
 export interface MarginProps {
-  margin?: string;
   marginTop?: number;
   marginRight?: number;
   marginBottom?: number;
@@ -47,11 +54,17 @@ export interface PaddingProps {
 }
 
 export interface SideContentProps<
-  leftButton = React.ReactNode,
-  rightButton = React.ReactNode,
+  leftContent = React.ReactNode,
+  rightContent = React.ReactNode,
 > {
-  leftButton?: leftButton;
-  rightButton?: rightButton;
+  leftContent?: leftContent;
+  rightContent?: rightContent;
 }
 
-export type ResponsiveStyleProps = string | Array<string>;
+// NOTE : 배열로 받을시 type에 따라 내려받을수 있도록
+// ex : ["row","column"]시 타입 자동완성
+export type ResponsiveStyleProps<T = string | number> =
+  | T
+  | string
+  | number
+  | Array<T>;

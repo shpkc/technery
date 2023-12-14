@@ -1,20 +1,6 @@
 import styled, { css } from "styled-components";
-import { FlexProps, ResponsiveDirectionType } from "./Flex.types";
-
-// NOTE : direction 반환, 추후 고도화
-const getDirectionByResponsiveProps = ({
-  direction,
-}: {
-  direction?: ResponsiveDirectionType;
-}) => {
-  if (typeof direction === "string")
-    return css`
-      flex-direction: ${direction};
-    `;
-  else {
-    return css``;
-  }
-};
+import { getResponsiveStyles } from "~/foundation/responsive";
+import { FlexProps } from "./Flex.types";
 
 export const Flex = styled.div<FlexProps>`
   display: flex;
@@ -24,6 +10,5 @@ export const Flex = styled.div<FlexProps>`
   flex-wrap: ${({ flexWrap }) => flexWrap};
 
   gap: ${({ gap }) => gap + "px"};
-
-  ${getDirectionByResponsiveProps};
+  ${(props) => getResponsiveStyles("flex-direction", props.direction)};
 `;
