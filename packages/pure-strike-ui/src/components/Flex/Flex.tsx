@@ -6,7 +6,7 @@ import { noop } from "~/utils/funtionUtils";
 export const Flex = forwardRef(
   (
     {
-      direction = "column",
+      direction = "row",
       justify,
       alignment,
       flexWrap = "nowrap",
