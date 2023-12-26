@@ -19,7 +19,6 @@ export const Text = forwardRef(
       ellipsisLine = 0,
       hover = false,
       onClick = noop,
-
       children,
       ...rest
     }: TextProps,
