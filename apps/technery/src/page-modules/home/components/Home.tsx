@@ -1,5 +1,6 @@
 import { Spacer, Stack, Text } from "pure-strike-ui";
 import { RecentServices } from "./RecentServices";
+import { TrendingServices } from "./TrendingServices";
 import { TrendingTopics } from "./TrendingTopics";
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
       <Spacer height={32} />
       <TrendingTopics />
       <Spacer height={100} />
-      <RecentServices />
+      <TrendingServices />
     </Stack>
   );
 };
