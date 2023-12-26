@@ -3,9 +3,12 @@ import {
   ResponsiveStyleProps,
 } from "~/types/componentProps";
 
+type GridAutoFlowType = "column" | "row";
+
 interface GridOptions {
   gridTemplateColums: ResponsiveStyleProps;
-  gridColumnGap?: number;
+  gridAutoFlow?: ResponsiveStyleProps<GridAutoFlowType>;
+  gridColumnGap?: ResponsiveStyleProps;
   gridRowGap?: number;
   gap?: number;
 }

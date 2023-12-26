@@ -8,6 +8,7 @@ export const Grid = forwardRef(
       gridTemplateColums,
       gridColumnGap = 0,
       gridRowGap = 0,
+      gridAutoFlow,
       children,
       ...rest
     }: GridProps,
@@ -18,6 +19,7 @@ export const Grid = forwardRef(
         gridTemplateColums={gridTemplateColums}
         gridColumnGap={gridColumnGap}
         gridRowGap={gridRowGap}
+        gridAutoFlow={gridAutoFlow}
         {...rest}
       >
         {children}
