@@ -28,7 +28,9 @@ export const TopicCard = forwardRef(
                 {emoji}
               </Styled.EmojiWrapper>
               <Spacer width={20} />
-              <Text typo={"Text16Regular"}>{title}</Text>
+              <Text typo={"Text16Regular"} whitespace={"nowrap"}>
+                {title}
+              </Text>
               <Styled.ArrowWrapper>
                 <IoIosArrowForward color={"gray"} size={20} />
               </Styled.ArrowWrapper>
