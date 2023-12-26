@@ -1,9 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-import { Flex, Grid, Spacer, Stack, Text, TopicCard } from "pure-strike-ui";
-import { TOPICS_LIST } from "src/constants/topics";
-import { TRENDING_TOPICS_LIST } from "../core/constants";
+import { Grid, Spacer, Stack, Text, TopicCard } from "pure-strike-ui";
+import { supabase } from "src/utils/apis/supabase/supabase";
+import { TopicInterface } from "src/types/topics";
+import React from "react";
 
 export const TrendingTopics = () => {
+  const { data }: { data } = useQuery({
+    queryKey: ["topics"],
+    queryFn: () => supabase.from("topics").select().eq("isTrend", true),
+  });
   return (
     <Stack padding={["16px", "0"]}>
       <Text color={"gray-800"} typo={"Text16Medium"}>
@@ -11,11 +17,12 @@ export const TrendingTopics = () => {
       </Text>
       <Spacer height={32} />
       <Grid
-        gridTemplateColums={["repeat(1, 1fr)", "repeat(4, 1fr)"]}
-        gridColumnGap={40}
+        gridTemplateColums={["repeat(1,1fr)", "repeat(4, 1fr)"]}
+        gridAutoFlow={["column", "row"]}
+        gridColumnGap={["20px", "40px"]}
         gridRowGap={20}
       >
-        {TOPICS_LIST.map((item) => {
+        {data?.data?.map((item: TopicInterface) => {
           const { title, emoji, bgColor, value } = item;
           return (
             <Link href={`/topics/${value}`} key={value}>
