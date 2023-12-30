@@ -10,6 +10,18 @@ const OrangePalette = {
   "orange-200-40": "#FFCC99",
 };
 
+const RedPalette = {
+  "red-100": "#ffcbd1",
+  "red-200": "#f69697",
+  "red-300": "#ee6b3e",
+  "red-400": "#f94449",
+  "red-500": "#ff2c2c",
+  "red-600": "#f01e2c",
+  "red-700": "#de0a26",
+  "red-800": "#d1001f",
+  "red-900": "#c30010",
+};
+
 const GrayPalette = {
   "gray-100": "#F7F7F7",
   "gray-200": "#F5F5F4",
@@ -58,6 +70,7 @@ const BorderColorPalett = {
 
 export const Palette = {
   ...OrangePalette,
+  ...RedPalette,
   ...GrayPalette,
   ...NavyPalette,
   ...BluePalette,
