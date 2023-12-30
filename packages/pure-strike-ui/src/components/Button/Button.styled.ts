@@ -10,7 +10,7 @@ import { ButtonStyleVariants } from "~/foundation/button/buttonVariants";
 
 // NOTE: ButtonSize에 따른 버튼의 min-width, height
 const BUTTON_SIZE_VALUE = {
-  [ButtonSize.SMALL]: { width: "42px", height: "34px" },
+  [ButtonSize.SMALL]: { width: "42px", height: "28px" },
   [ButtonSize.MEDIUM]: { width: "131px", height: "44px" },
   [ButtonSize.STANDARD]: { width: "211px", height: "56px" },
   [ButtonSize.MODAL]: { width: "143px", height: "44px" },
@@ -20,6 +20,7 @@ interface ButtonWrapperProps {
   size: ButtonSize;
   selected?: boolean;
   hover?: boolean;
+  fullWidth?: boolean;
   styleVariant: ButtonStyleVariant;
   colorVariant: ButtonColorVariant;
 }
@@ -42,6 +43,8 @@ const getColorFromStyleVariant = ({
       return ButtonStyleVariants.Primary;
     case ButtonStyleVariant.Secondary:
       return ButtonStyleVariants.Secondary;
+    case ButtonStyleVariant.Like:
+      return ButtonStyleVariants.Like;
   }
 };
 
@@ -65,6 +68,9 @@ const getTextStyleFromVariant = ({
 
 // NOTE : 기본 버튼 스타일
 export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   box-sizing: border-box;
   cursor: pointer;
@@ -75,6 +81,11 @@ export const ButtonWrapper = styled.button<ButtonWrapperProps>`
   ${getColorFromStyleVariant};
   ${getTextStyleFromVariant};
   ${getSizeFromButtonSize};
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `}
 `;
 
 // NOTE : 기본 내부 텍스트 스타일
