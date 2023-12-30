@@ -8,15 +8,15 @@ import {
   Stack,
   Text,
   TopicCard,
+  TrendServiceCard,
 } from "pure-strike-ui";
-import { TOPICS_LIST } from "src/constants/topics";
 import { ServicesInterface } from "src/types/services";
 import { supabase } from "src/utils/apis/supabase/supabase";
 
-export const TrendingServices = () => {
+export const TrendServices = () => {
   const { data }: { data } = useQuery({
-    queryKey: ["services"],
-    queryFn: () => supabase.from("services").select(),
+    queryKey: ["trendServices"],
+    queryFn: () => supabase.from("services").select().eq("isTrend", true),
   });
 
   return (
@@ -24,19 +24,20 @@ export const TrendingServices = () => {
       <Text color={"gray-800"} typo={"Text16Medium"}>
         TRENDING SERVICES
       </Text>
-      <Spacer height={32} />
+      <Spacer height={["16px", "32px"]} />
       <Grid
-        gridTemplateColums={["repeat(1, 1fr)", "repeat(4, 1fr)"]}
-        gridColumnGap={60}
-        gridRowGap={80}
+        gridTemplateColums={["repeat(1, 1fr)", "repeat(3, 1fr)"]}
+        gridColumnGap={10}
+        gridRowGap={16}
       >
         {data?.data?.map((item: ServicesInterface) => {
-          const { id, name, description, thumbnail, link } = item;
+          const { id, name, summary, thumbnail, likeCount } = item;
           return (
-            <Link href={`/services/${link}`} key={id}>
-              <ServiceCard
+            <Link href={`/services/${id}`} key={id}>
+              <TrendServiceCard
                 name={name}
-                description={description}
+                summary={summary}
+                likeCount={likeCount}
                 thumbnail={thumbnail}
               />
             </Link>

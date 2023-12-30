@@ -15,7 +15,7 @@ export const TrendingTopics = () => {
       <Text color={"gray-800"} typo={"Text16Medium"}>
         TRENDING TOPICS
       </Text>
-      <Spacer height={32} />
+      <Spacer height={["16px", "32px"]} />
       <Grid
         gridTemplateColums={["repeat(1,1fr)", "repeat(4, 1fr)"]}
         gridAutoFlow={["column", "row"]}
