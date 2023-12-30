@@ -1,3 +1,4 @@
+import React from "react";
 import {
   DisableProps,
   ComponentBaseProps,
@@ -12,6 +13,7 @@ export enum ButtonStyleVariant {
   Secondary = "secondary",
   Link = "link",
   Icon = "icon",
+  Like = "like,",
 }
 
 export enum ButtonColorVariant {
@@ -33,6 +35,9 @@ interface ButtonOptions {
   loading?: boolean;
   active?: boolean;
   selected?: boolean;
+  fullWidth?: boolean;
+  leftComponent?: React.ReactNode;
+  rightComponent?: React.ReactNode;
   styleVariant?: ButtonStyleVariant;
   colorVariant?: ButtonColorVariant;
   onClick?: MouseEventHandler;

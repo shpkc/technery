@@ -21,6 +21,9 @@ export const Button = forwardRef(
       loading = false,
       active = false,
       selected = false,
+      fullWidth = false,
+      leftComponent,
+      rightComponent,
       size = ButtonSize.STANDARD,
       styleVariant = ButtonStyleVariant.Primary,
       colorVariant = ButtonColorVariant.Orange,
@@ -60,6 +63,14 @@ export const Button = forwardRef(
       [onClick, disabled]
     );
 
+    const getLeftComponent = React.useMemo(() => {
+      return leftComponent;
+    }, [leftComponent]);
+
+    const getRightComponent = React.useMemo(() => {
+      return rightComponent;
+    }, [rightComponent]);
+
     return (
       <Styled.ButtonWrapper
         as={as}
@@ -77,10 +88,13 @@ export const Button = forwardRef(
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        fullWidth={fullWidth}
         onBlur={onBlur}
         {...rest}
       >
+        {leftComponent && getLeftComponent}
         {text && <Styled.ContentText>{text}</Styled.ContentText>}
+        {rightComponent && getRightComponent}
       </Styled.ButtonWrapper>
     );
   }
