@@ -50,6 +50,7 @@ export const Container = styled.div<StackProps>`
   position: ${({ position }) => position};
 
   ${(props) => getResponsiveStyles("width", props.width)};
+  min-width: ${({ minWidth }) => minWidth && getPixelByType(minWidth)};
 
   height: ${({ height }) => (height ? getPixelByType(height) : "100%")};
   min-height: ${({ minHeight }) => minHeight && getPixelByType(minHeight)};
@@ -68,5 +69,6 @@ export const Container = styled.div<StackProps>`
 
   ${({ borderWidth }) => borderWidth && getBorderStyle};
   z-index: ${({ zIndex }) => zIndex};
-  border-radius: ${({ borderRadius }) => borderRadius + "px"};
+  border-radius: ${({ borderRadius }) =>
+    borderRadius && getPixelByType(borderRadius)};
 `;

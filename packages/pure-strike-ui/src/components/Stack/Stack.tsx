@@ -10,6 +10,7 @@ export const Stack = forwardRef(
       position,
       top,
       width,
+      minWidth,
       maxWidth,
       height,
       minHeight,
@@ -35,6 +36,7 @@ export const Stack = forwardRef(
         width={width}
         margin={margin}
         padding={padding}
+        minWidth={minWidth}
         maxWidth={maxWidth}
         height={height}
         minHeight={minHeight}

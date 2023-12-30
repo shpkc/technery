@@ -13,13 +13,14 @@ interface StackOptions {
   width?: ResponsiveStyleProps;
   margin?: ResponsiveStyleProps;
   padding?: ResponsiveStyleProps;
+  minWidth?: number | string;
   maxWidth?: number | string;
   height?: number | string;
   minHeight?: number | string;
   maxHeight?: number | string;
   backgroundColor?: ColorPaletteProps;
   zIndex?: ZIndex;
-  borderRadius?: number;
+  borderRadius?: number | string;
   onClick?: MouseEventHandler;
 }
 
