@@ -3,8 +3,9 @@ import { MouseEventHandler } from "~/types/events";
 
 interface ServiceCardOptions {
   name: string;
-  description: string;
+  summary: string;
   thumbnail: string;
+  likeCount: number;
   onClick?: MouseEventHandler;
 }
 

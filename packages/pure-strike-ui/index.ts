@@ -13,3 +13,4 @@ export * from "./src/components/Cards/TopicCard";
 export * from "./src/components/Grid";
 export * from "./src/components/Responsive";
 export * from "./src/components/Cards/ServiceCard";
+export * from "./src/components/Cards/ServiceCard/TrendService";
