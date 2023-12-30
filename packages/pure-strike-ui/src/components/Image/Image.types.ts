@@ -1,8 +1,13 @@
-import { ComponentBaseProps, MarginProps } from "~/types/componentProps";
+import {
+  ComponentBaseProps,
+  MarginProps,
+  ResponsiveStyleProps,
+} from "~/types/componentProps";
 
 export interface ImageOptions {
-  width?: number;
-  height?: number;
+  width?: ResponsiveStyleProps;
+  height?: ResponsiveStyleProps;
+  borderRadius?: ResponsiveStyleProps;
   src: string;
   alt?: string;
   onLoad?: () => void;
