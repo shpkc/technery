@@ -5,29 +5,35 @@ import { InfiniteScrollTemplate } from "src/components/infinite/InfiniteScrollTe
 import { Loading } from "src/components/loading/Loading";
 import { PER_PAGE } from "src/constants/page";
 import { CATEGORY_LIST } from "src/page-modules/constants/category";
-import { formatBetweenTime } from "src/utils/date/date";
+import { dateHelper, formatBetweenTime } from "src/utils/date/date";
 import {
   ButtonSize,
   ButtonStyleVariant,
 } from "~components/Button/Button.types";
-import { getPostList } from "../core/_requests";
 import { PostItemInterface } from "../types/posts";
 import { useMutate } from "src/utils/apis/query/useMutate";
-import { postMethod } from "src/utils/apis/method/postMethod";
 import { patchMethod } from "src/utils/apis/method/patchMethod";
+import { supabase } from "src/utils/apis/supabase/supabase";
 
 export const TechPostList = () => {
   const [category, setCategory] = React.useState<string>("");
+  const { threeMonthAgo } = dateHelper();
 
   const { data, fetchNextPage, isFetching } = useInfiniteQuery({
     queryKey: ["posts", category],
-    queryFn: ({ pageParam }) => getPostList({ pageParam, category }),
-    initialPageParam: 1,
-    getNextPageParam: (lastPage, allPages) => {
+    queryFn: ({ pageParam }) => {
+      return supabase
+        .from("posts")
+        .select("*")
+        .gt("post_created_at", threeMonthAgo)
+        .order("post_created_at", { ascending: false })
+        .limit(30)
+        .range(pageParam * PER_PAGE, (pageParam + 1) * PER_PAGE - 1);
+    },
+    initialPageParam: 0,
+    getNextPageParam: (lastPage, allPages: any, lastPageParam) => {
       const nextPage = allPages.length + 1;
-      return lastPage?.length === 0 || lastPage?.length < PER_PAGE
-        ? undefined
-        : nextPage;
+      return nextPage;
     },
   });
 
@@ -47,7 +53,7 @@ export const TechPostList = () => {
   }, [data]);
 
   const listData = React.useMemo(() => {
-    return data?.pages.flatMap((page) => page);
+    return data?.pages.flatMap((page: any) => page?.data);
   }, [data]);
 
   // NOTE : 클릭시 viewCount 업데이트 & 링크 창 열기
@@ -62,25 +68,8 @@ export const TechPostList = () => {
     },
     [category]
   );
-
   return (
     <Stack width={["100%", "1100px"]} margin={"0 auto"}>
-      <Flex direction={"row"} gap={8} flexWrap={"wrap"}>
-        {CATEGORY_LIST.map((item) => {
-          const isSelected = category === item.name;
-          return (
-            <Button
-              key={item.value}
-              text={item.name}
-              size={ButtonSize.SMALL}
-              styleVariant={ButtonStyleVariant.Primary}
-              selected={isSelected}
-              onClick={() => onClickCategory(item.value)}
-            />
-          );
-        })}
-      </Flex>
-      <Spacer height={"30px"} />
       <InfiniteScrollTemplate
         nextPage={() => fetchNextPage()}
         currentCount={currentCount as number}
