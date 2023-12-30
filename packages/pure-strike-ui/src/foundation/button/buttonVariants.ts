@@ -30,9 +30,19 @@ const Secondary = css`
   border-radius: 4px;
 `;
 
+const Like = css`
+  background-color: ${Palette["gray-300"]};
+  &:hover {
+    background-color: ${Palette["red-300"]};
+    color: white;
+    transition: 0.1s ease-in-out;
+  }
+`;
+
 export const ButtonStyleVariants = {
   Primary,
   Secondary,
+  Like,
 };
 
 // NOTE : 키값으로 type 생성
