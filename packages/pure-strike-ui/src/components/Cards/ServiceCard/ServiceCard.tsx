@@ -3,7 +3,6 @@ import * as Styled from "./ServiceCard.styled";
 import { noop } from "~/utils/funtionUtils";
 import { Spacer } from "~/components/Spacer";
 import { Text } from "~/components/Text";
-import { Flex } from "~/components/Flex";
 import { ServiceCardProps } from "./ServiceCard.types";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -11,8 +10,9 @@ export const ServiceCard = forwardRef(
   (
     {
       name,
-      description,
+      summary,
       thumbnail,
+      likeCount,
       onClick = noop,
       children,
       ...rest
@@ -32,7 +32,7 @@ export const ServiceCard = forwardRef(
             ellipsis={true}
             ellipsisLine={3}
           >
-            {description}
+            {summary}
           </Text>
         </Styled.Body>
       </Styled.Wrapper>

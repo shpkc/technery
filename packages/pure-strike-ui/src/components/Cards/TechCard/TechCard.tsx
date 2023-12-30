@@ -30,13 +30,10 @@ export const TechCard = forwardRef(
       <Styled.CardWrapper onClick={onClick} {...rest}>
         <Styled.CardThumbnail thumbnail={thumbnail} />
         <Spacer height={"20px"} />
-        <Text typo={"SubTitle14Medium"} color={"gray-600"}>
-          # {category}
-        </Text>
         <Spacer height={"4px"} />
         <Stack minHeight={52} maxHeight={52}>
           <Text
-            typo={"Title24Bold"}
+            typo={"Text24Bold"}
             cursor={"pointer"}
             ellipsis={true}
             ellipsisLine={2}
@@ -46,7 +43,7 @@ export const TechCard = forwardRef(
         </Stack>
         <Spacer height={"8px"} />
         <Text
-          typo={"MainText16Medium"}
+          typo={"Text16Medium"}
           color={"gray-500"}
           ellipsis={true}
           ellipsisLine={2}
@@ -55,14 +52,14 @@ export const TechCard = forwardRef(
         </Text>
         <Spacer height={"8px"} />
         <Flex direction={"row"} justify={"space-between"} alignment={"center"}>
-          <Text typo={"SubText14Bold"} color={"blue-700"}>
+          <Text typo={"Text14Bold"} color={"blue-700"}>
             {author}
           </Text>
           <Flex direction={"row"} alignment={"center"}>
-            <Text typo={"SubText14Regular"}>{post_created_at}</Text>
+            <Text typo={"Text14Regular"}>{post_created_at}</Text>
             <Spacer width={8} />
             <Icon source={ViewIcon} size={IconSize.Size20} color={"gray-500"} />
-            <Text typo={"SubText14Regular"} color={"gray-500"}>
+            <Text typo={"Text14Regular"} color={"gray-500"}>
               {viewCount}
             </Text>
           </Flex>
