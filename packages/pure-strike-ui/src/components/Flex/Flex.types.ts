@@ -1,5 +1,6 @@
 import {
   ComponentBaseProps,
+  OverflowProps,
   ResponsiveStyleProps,
 } from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
@@ -31,4 +32,7 @@ interface FlexOptions {
   onClick?: MouseEventHandler;
 }
 
-export interface FlexProps extends ComponentBaseProps, FlexOptions {}
+export interface FlexProps
+  extends ComponentBaseProps,
+    OverflowProps,
+    FlexOptions {}
