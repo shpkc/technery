@@ -2,7 +2,11 @@ import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import { NextSeo } from "next-seo";
 import { DEFAULT_SEO } from "src/constants/seo";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+  HydrationBoundary,
+} from "@tanstack/react-query";
 import Script from "next/script";
 import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
@@ -44,7 +48,9 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <GlobalStyle />
-        <Component {...pageProps} />
+        <HydrationBoundary state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+        </HydrationBoundary>
         <SpeedInsights />
       </StyleSheetManager>
       <Analytics mode={"production"} />
