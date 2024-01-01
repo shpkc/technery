@@ -3,6 +3,7 @@ import { Stack, Text, Icon, Flex, Spacer, Responsive } from "pure-strike-ui";
 import { ZIndex } from "~foundation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ReportIcon } from "pure-strike-icons";
+import { FiFlag } from "react-icons/fi";
 
 const MENU_LIST = [
   { title: "Topics", link: "/topics" },
@@ -29,7 +30,7 @@ export const Header = () => {
       <Flex direction={"row"} justify={"space-between"} alignment={"center"}>
         <Link href={"/"}>
           <Flex direction={"row"} alignment={"center"}>
-            <Icon source={ReportIcon} />
+            <FiFlag size={32} />
             <Spacer width={8} />
             <Text typo={"Text20Bold"}>TECHNERY</Text>
           </Flex>
