@@ -1,15 +1,10 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Button, Flex, Grid, Spacer, Stack, TechCard } from "pure-strike-ui";
+import { Grid, Stack, TechCard } from "pure-strike-ui";
 import React from "react";
 import { InfiniteScrollTemplate } from "src/components/infinite/InfiniteScrollTemplate";
 import { Loading } from "src/components/loading/Loading";
 import { PER_PAGE } from "src/constants/page";
-import { CATEGORY_LIST } from "src/page-modules/constants/category";
 import { dateHelper, formatBetweenTime } from "src/utils/date/date";
-import {
-  ButtonSize,
-  ButtonStyleVariant,
-} from "~components/Button/Button.types";
 import { PostItemInterface } from "../types/posts";
 import { useMutate } from "src/utils/apis/query/useMutate";
 import { patchMethod } from "src/utils/apis/method/patchMethod";

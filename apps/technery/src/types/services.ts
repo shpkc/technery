@@ -1,3 +1,7 @@
+export interface ServiceImgInterface {
+  url: string;
+}
+
 export interface ServicesInterface {
   id: string;
   name: string;
@@ -6,4 +10,5 @@ export interface ServicesInterface {
   description: string;
   link: string;
   thumbnail: string;
+  images: Array<ServiceImgInterface>;
 }
