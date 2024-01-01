@@ -11,6 +11,7 @@ export const Flex = forwardRef(
       alignment,
       flexWrap = "nowrap",
       gap = 0,
+      overflow = "visible",
       onClick = noop,
       children,
       ...rest
@@ -24,6 +25,7 @@ export const Flex = forwardRef(
         alignment={alignment}
         flexWrap={flexWrap}
         gap={gap}
+        overflow={overflow}
         onClick={onClick}
         {...rest}
       >

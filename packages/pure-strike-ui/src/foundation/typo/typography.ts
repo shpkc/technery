@@ -23,6 +23,12 @@ const Text24Bold = css`
   line-height: 1.1;
 `;
 
+const Text24Medium = css`
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+`;
+
 const Text20Bold = css`
   font-size: 20px;
   font-weight: 700;
@@ -37,6 +43,12 @@ const Text20Medium = css`
 
 const Text20Regular = css`
   font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+`;
+
+const Text18Regular = css`
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
 `;
@@ -94,9 +106,11 @@ export const Typography = {
   Text32Bold,
   Text28Bold,
   Text24Bold,
+  Text24Medium,
   Text20Bold,
   Text20Medium,
   Text20Regular,
+  Text18Regular,
   Text16Bold,
   Text16Medium,
   Text16Regular,
