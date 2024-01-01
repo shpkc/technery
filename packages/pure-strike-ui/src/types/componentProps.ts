@@ -33,6 +33,10 @@ export interface HoverProps {
   hover?: boolean;
 }
 
+export interface OverflowProps {
+  overflow?: "visible" | "hidden" | "scroll" | "auto";
+}
+
 export interface MarginProps {
   marginTop?: number;
   marginRight?: number;
