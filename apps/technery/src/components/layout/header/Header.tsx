@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Stack, Text, Icon, Flex, Spacer, Responsive } from "pure-strike-ui";
+import { Stack, Text, Flex, Spacer, Responsive } from "pure-strike-ui";
 import { ZIndex } from "~foundation";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { ReportIcon } from "pure-strike-icons";
 import { FiFlag } from "react-icons/fi";
 
 const MENU_LIST = [

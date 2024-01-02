@@ -3,7 +3,6 @@ import * as Styled from "./TextField.styled";
 import { TextFieldProps } from "./TextField.types";
 import { Text } from "../Text/Text";
 import { Icon } from "../Icon";
-import { CloseIcon } from "pure-strike-icons";
 import { IconSize } from "../Icon/Icon.types";
 import { useController } from "react-hook-form";
 
@@ -70,11 +69,12 @@ export const TextField = forwardRef(
     const ClearComponent = React.useMemo<React.ReactNode>(() => {
       if (isValueAvaiable) {
         return (
-          <Icon
-            source={CloseIcon}
-            size={IconSize.Size20}
-            onClick={onClickReset}
-          />
+          <div></div>
+          // <Icon
+          //   source={CloseIcon}
+          //   size={IconSize.Size20}
+          //   onClick={onClickReset}
+          // />
         );
       }
     }, [isValueAvaiable]);

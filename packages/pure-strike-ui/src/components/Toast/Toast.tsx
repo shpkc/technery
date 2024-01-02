@@ -5,7 +5,6 @@ import { noop } from "~/utils/funtionUtils";
 import { ToastProps } from "./Toast.types";
 import { Text } from "../Text";
 import { Icon } from "../Icon";
-import { ErrorIcon } from "pure-strike-icons";
 import { IconSize } from "../Icon/Icon.types";
 
 export const Toast = forwardRef(
@@ -21,9 +20,9 @@ export const Toast = forwardRef(
     );
     return (
       <Styled.ToastWrapper>
-        {withErrorIcon && (
+        {/* {withErrorIcon && (
           <Icon source={ErrorIcon} size={IconSize.Size16} marginRight={10} />
-        )}
+        )} */}
         <Text typo={"Text14Bold"} color={"white"}>
           {message}
         </Text>

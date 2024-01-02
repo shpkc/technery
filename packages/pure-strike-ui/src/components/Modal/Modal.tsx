@@ -3,7 +3,6 @@ import * as Styled from "./Modal.styled";
 import { ModalProps } from "./Modal.types";
 import { Text } from "../Text";
 import { Icon } from "../Icon";
-import { CloseIcon } from "pure-strike-icons";
 
 export const Modal = forwardRef(
   (
@@ -29,7 +28,7 @@ export const Modal = forwardRef(
         <Styled.Content onClick={preventCloseClick}>
           <Styled.Header>
             <Text typo={"Text14Bold"}>{title}</Text>
-            <Icon source={CloseIcon} onClick={close} />
+            {/* <Icon source={CloseIcon} onClick={close} /> */}
           </Styled.Header>
           <Styled.Body>
             {content && content}

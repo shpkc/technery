@@ -6,9 +6,7 @@ import { Spacer } from "~/components/Spacer";
 import { Text } from "~/components/Text";
 import { Flex } from "~/components/Flex";
 import { Stack } from "~/components/Stack";
-import { Icon } from "~/components/Icon";
-import { ViewIcon } from "pure-strike-icons";
-import { IconSize } from "~/components/Icon/Icon.types";
+import { TbClick } from "react-icons/tb";
 
 export const TechCard = forwardRef(
   (
@@ -58,7 +56,8 @@ export const TechCard = forwardRef(
           <Flex direction={"row"} alignment={"center"}>
             <Text typo={"Text14Regular"}>{post_created_at}</Text>
             <Spacer width={8} />
-            <Icon source={ViewIcon} size={IconSize.Size20} color={"gray-500"} />
+            <TbClick size={18} color={"#7E7E7E"} />
+            <Spacer width={4} />
             <Text typo={"Text14Regular"} color={"gray-500"}>
               {viewCount}
             </Text>
