@@ -1,15 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-import {
-  Flex,
-  Grid,
-  ServiceCard,
-  Spacer,
-  Stack,
-  Text,
-  TopicCard,
-  TrendServiceCard,
-} from "pure-strike-ui";
+import { Grid, Spacer, Stack, Text, TrendServiceCard } from "pure-strike-ui";
 import { ServicesInterface } from "src/types/services";
 import { supabase } from "src/utils/apis/supabase/supabase";
 
