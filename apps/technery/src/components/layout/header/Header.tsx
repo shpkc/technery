@@ -8,7 +8,7 @@ import { FiFlag } from "react-icons/fi";
 const MENU_LIST = [
   { title: "Topics", link: "/topics" },
   { title: "Tech Blogs", link: "/techBlogs" },
-  { title: "News Letter", link: "/newsLetter" },
+  // { title: "News Letter", link: "/newsLetter" },
   { title: "Submit", link: "/submit" },
 ];
 
