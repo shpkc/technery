@@ -22,7 +22,6 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "pure-strike-icons": "*",
     "react-hook-form": "^7.48.2",
     "styled-components": "^6.1.0"
   }

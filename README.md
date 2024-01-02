@@ -63,7 +63,6 @@
 │                   └── TextField
 │                   └── ...
 │
-│     └── pure-strike-icons
 │     └── eslint-settings (eslint related settings)
 │     └── tsconfig-settings (tsconfig related settings)
 │
