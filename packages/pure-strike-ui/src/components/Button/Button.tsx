@@ -27,6 +27,7 @@ export const Button = forwardRef(
       size = ButtonSize.STANDARD,
       styleVariant = ButtonStyleVariant.Primary,
       colorVariant = ButtonColorVariant.Orange,
+      borderRadius = "4px",
       onClick = noop,
       onMouseEnter = noop,
       onMouseLeave = noop,
@@ -74,6 +75,7 @@ export const Button = forwardRef(
     return (
       <Styled.ButtonWrapper
         as={as}
+        text={text}
         type={type}
         style={style}
         className={className}
@@ -84,7 +86,7 @@ export const Button = forwardRef(
         selected={selected}
         styleVariant={styleVariant}
         colorVariant={colorVariant}
-        text={text}
+        borderRadius={borderRadius}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
