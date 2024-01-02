@@ -1,9 +1,5 @@
 import styled, { css } from "styled-components";
-import {
-  ButtonColorVariant,
-  ButtonSize,
-  ButtonStyleVariant,
-} from "./Button.types";
+import { ButtonSize, ButtonStyleVariant } from "./Button.types";
 import { ButtonStyleVariants } from "~/foundation/button/buttonVariants";
 import { getResponsiveStyles } from "~/foundation";
 
@@ -22,7 +18,6 @@ interface ButtonWrapperProps {
   fullWidth?: boolean;
   borderRadius?: string | number;
   styleVariant: ButtonStyleVariant;
-  colorVariant: ButtonColorVariant;
 }
 
 const getSizeFromButtonSize = ({ size }: { size: ButtonSize }) => {

@@ -1,11 +1,7 @@
 import React, { forwardRef } from "react";
 import * as Styled from "./Button.styled";
 import type ButtonProps from "./Button.types";
-import {
-  ButtonColorVariant,
-  ButtonSize,
-  ButtonStyleVariant,
-} from "./Button.types";
+import { ButtonSize, ButtonStyleVariant } from "./Button.types";
 import { noop } from "~/utils/funtionUtils";
 import { MouseEventHandler } from "~/types/events";
 
@@ -26,7 +22,6 @@ export const Button = forwardRef(
       rightComponent,
       size = ButtonSize.STANDARD,
       styleVariant = ButtonStyleVariant.Primary,
-      colorVariant = ButtonColorVariant.Orange,
       borderRadius = "4px",
       onClick = noop,
       onMouseEnter = noop,
@@ -85,7 +80,6 @@ export const Button = forwardRef(
         active={active}
         selected={selected}
         styleVariant={styleVariant}
-        colorVariant={colorVariant}
         borderRadius={borderRadius}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}

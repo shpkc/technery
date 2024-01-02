@@ -18,12 +18,6 @@ export enum ButtonStyleVariant {
   Like = "like,",
 }
 
-export enum ButtonColorVariant {
-  Orange = "orange",
-  Gray = "gray",
-  White = "white",
-}
-
 export enum ButtonSize {
   STANDARD = "STANDARD",
   MEDIUM = "MEDIUM",
@@ -41,7 +35,6 @@ interface ButtonOptions {
   leftComponent?: React.ReactNode;
   rightComponent?: React.ReactNode;
   styleVariant?: ButtonStyleVariant;
-  colorVariant?: ButtonColorVariant;
   borderRadius?: ResponsiveStyleProps;
   onClick?: MouseEventHandler;
   onMouseEnter?: MouseEventHandler;
