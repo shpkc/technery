@@ -3,16 +3,17 @@ import ButtonProps from "~/components/Button/Button.types";
 import { Palette } from "../colors/palette";
 
 const Primary = css<ButtonProps>`
-  background-color: ${Palette.white};
-  border: 1px solid ${Palette["gray-300"]};
+  background-color: ${Palette["black-origin"]};
   transition: 0.1s ease-in-out;
+  color: white;
   &:disabled {
     background-color: ${Palette["gray-200"]};
     color: ${Palette["gray-400"]};
   }
   &:hover {
-    background-color: ${Palette["black-origin"]};
-    color: white;
+    background-color: white;
+    color: black;
+    border: 1px solid ${Palette["black-origin"]};
   }
   ${({ selected }) =>
     selected &&
@@ -22,6 +23,16 @@ const Primary = css<ButtonProps>`
         color: white;
       }
     `}
+`;
+
+const Outline = css<ButtonProps>`
+  background-color: ${Palette["white"]};
+  border: 1px solid ${Palette["gray-300"]};
+  transition: 0.1s ease-in-out;
+  color: black;
+  &:hover {
+    background-color: ${Palette["gray-200"]};
+  }
 `;
 
 const Secondary = css`
@@ -42,6 +53,7 @@ const Like = css`
 export const ButtonStyleVariants = {
   Primary,
   Secondary,
+  Outline,
   Like,
 };
 
