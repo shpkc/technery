@@ -2,7 +2,7 @@ import { css } from "styled-components";
 import ButtonProps from "~/components/Button/Button.types";
 import { Palette } from "../colors/palette";
 
-const Primary = css<ButtonProps>`
+const Primary = css`
   background-color: ${Palette["black-origin"]};
   transition: 0.1s ease-in-out;
   color: white;
@@ -15,17 +15,9 @@ const Primary = css<ButtonProps>`
     color: black;
     border: 1px solid ${Palette["black-origin"]};
   }
-  ${({ selected }) =>
-    selected &&
-    css`
-      background-color: ${Palette["black-origin"]};
-      p {
-        color: white;
-      }
-    `}
 `;
 
-const Outline = css<ButtonProps>`
+const Outline = css`
   background-color: ${Palette["white"]};
   border: 1px solid ${Palette["gray-300"]};
   transition: 0.1s ease-in-out;

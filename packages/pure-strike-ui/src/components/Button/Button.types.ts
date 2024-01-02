@@ -34,7 +34,7 @@ interface ButtonOptions {
   fullWidth?: boolean;
   leftComponent?: React.ReactNode;
   rightComponent?: React.ReactNode;
-  styleVariant: ButtonStyleVariant;
+  styleVariant?: ButtonStyleVariant;
   borderRadius?: ResponsiveStyleProps;
   onClick?: MouseEventHandler;
   onMouseEnter?: MouseEventHandler;
