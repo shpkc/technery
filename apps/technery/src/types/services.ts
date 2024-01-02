@@ -1,3 +1,5 @@
+import { TopicInterface } from "./topics";
+
 export interface ServiceImgInterface {
   url: string;
 }
@@ -11,4 +13,5 @@ export interface ServicesInterface {
   link: string;
   thumbnail: string;
   images: Array<ServiceImgInterface>;
+  topics: TopicInterface;
 }
