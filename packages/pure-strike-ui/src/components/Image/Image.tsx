@@ -4,7 +4,7 @@ import { ImageProps } from "./Image.types";
 
 export const Image = forwardRef(
   (
-    { src, width, height, borderRadius, alt, onLoad }: ImageProps,
+    { src, width, height, borderRadius = "0px", alt, onLoad }: ImageProps,
     forwardRef
   ) => {
     const handleLoad = React.useCallback(() => {
