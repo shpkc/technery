@@ -83,7 +83,7 @@ export const TextField = forwardRef(
       <Styled.Wrapper isError={isError} disabled={disabled}>
         {isShowLabel && (
           <Styled.Label>
-            <Text typo={"SubText12Regular"}>{label}</Text>
+            <Text typo={"Text14Bold"}>{label}</Text>
           </Styled.Label>
         )}
         <Styled.Container>
