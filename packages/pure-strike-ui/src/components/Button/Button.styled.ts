@@ -4,16 +4,15 @@ import {
   ButtonSize,
   ButtonStyleVariant,
 } from "./Button.types";
-import { Text } from "~/components/Text";
-import { Palette } from "~/foundation/colors/palette/palette";
 import { ButtonStyleVariants } from "~/foundation/button/buttonVariants";
+import { getResponsiveStyles } from "~/foundation";
 
-// NOTE: ButtonSize에 따른 버튼의 min-width, height
+// NOTE: ButtonSize에 따른 버튼의 height 설정, width는 외부 컨테이너로 설정
 const BUTTON_SIZE_VALUE = {
-  [ButtonSize.SMALL]: { width: "42px", height: "28px" },
-  [ButtonSize.MEDIUM]: { width: "131px", height: "44px" },
-  [ButtonSize.STANDARD]: { width: "211px", height: "56px" },
-  [ButtonSize.MODAL]: { width: "143px", height: "44px" },
+  [ButtonSize.SMALL]: { height: "30px" },
+  [ButtonSize.MEDIUM]: { height: "44px" },
+  [ButtonSize.STANDARD]: { height: "56px" },
+  [ButtonSize.MODAL]: { height: "44px" },
 };
 
 interface ButtonWrapperProps {
@@ -21,13 +20,13 @@ interface ButtonWrapperProps {
   selected?: boolean;
   hover?: boolean;
   fullWidth?: boolean;
+  borderRadius?: string | number;
   styleVariant: ButtonStyleVariant;
   colorVariant: ButtonColorVariant;
 }
 
 const getSizeFromButtonSize = ({ size }: { size: ButtonSize }) => {
   return css`
-    min-width: ${BUTTON_SIZE_VALUE[size].width};
     height: ${BUTTON_SIZE_VALUE[size].height};
   `;
 };
@@ -43,31 +42,16 @@ const getColorFromStyleVariant = ({
       return ButtonStyleVariants.Primary;
     case ButtonStyleVariant.Secondary:
       return ButtonStyleVariants.Secondary;
+    case ButtonStyleVariant.Outline:
+      return ButtonStyleVariants.Outline;
     case ButtonStyleVariant.Like:
       return ButtonStyleVariants.Like;
   }
 };
 
-const getTextStyleFromVariant = ({
-  styleVariant,
-}: {
-  styleVariant: ButtonStyleVariant;
-}) => {
-  switch (styleVariant) {
-    case ButtonStyleVariant.Primary:
-      return css`
-        color: ${Palette["black-origin"]};
-        font-weight: 700;
-      `;
-    case ButtonStyleVariant.Secondary:
-      return css`
-        color: ${Palette["orange-200"]};
-      `;
-  }
-};
-
 // NOTE : 기본 버튼 스타일
 export const ButtonWrapper = styled.button<ButtonWrapperProps>`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,19 +63,16 @@ export const ButtonWrapper = styled.button<ButtonWrapperProps>`
   background-color: white;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   ${getColorFromStyleVariant};
-  ${getTextStyleFromVariant};
   ${getSizeFromButtonSize};
-  ${({ fullWidth }) =>
-    fullWidth &&
-    css`
-      width: 100%;
-    `}
+  ${({ borderRadius }) =>
+    borderRadius && getResponsiveStyles("border-radius", borderRadius)};
 `;
 
 // NOTE : 기본 내부 텍스트 스타일
-export const ContentText = styled(Text)`
+export const ContentText = styled.p`
   padding: 0 4px;
   font-size: 16px;
   line-height: 24px;
+  font-weight: 700;
   text-align: center;
 `;

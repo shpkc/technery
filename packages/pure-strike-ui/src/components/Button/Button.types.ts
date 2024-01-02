@@ -3,6 +3,7 @@ import {
   DisableProps,
   ComponentBaseProps,
   SizeProps,
+  ResponsiveStyleProps,
 } from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
 
@@ -11,6 +12,7 @@ type FocusEventHandler = React.FocusEventHandler<HTMLButtonElement>;
 export enum ButtonStyleVariant {
   Primary = "primary",
   Secondary = "secondary",
+  Outline = "outline",
   Link = "link",
   Icon = "icon",
   Like = "like,",
@@ -40,6 +42,7 @@ interface ButtonOptions {
   rightComponent?: React.ReactNode;
   styleVariant?: ButtonStyleVariant;
   colorVariant?: ButtonColorVariant;
+  borderRadius?: ResponsiveStyleProps;
   onClick?: MouseEventHandler;
   onMouseEnter?: MouseEventHandler;
   onMouseLeave?: MouseEventHandler;
