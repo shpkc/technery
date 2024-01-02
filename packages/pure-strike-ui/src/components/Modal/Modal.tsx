@@ -28,14 +28,14 @@ export const Modal = forwardRef(
       <Styled.Background {...rest} isShow={isShow} onClick={close}>
         <Styled.Content onClick={preventCloseClick}>
           <Styled.Header>
-            <Text typo={"ModalHeader"}>{title}</Text>
+            <Text typo={"Text14Bold"}>{title}</Text>
             <Icon source={CloseIcon} onClick={close} />
           </Styled.Header>
           <Styled.Body>
             {content && content}
             {description && (
               <Styled.Description>
-                <Text typo={"ModalBodyMedium"} whitespace={"pre"}>
+                <Text typo={"Text14Bold"} whitespace={"pre"}>
                   {description}
                 </Text>
               </Styled.Description>

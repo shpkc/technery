@@ -24,7 +24,7 @@ export const Toast = forwardRef(
         {withErrorIcon && (
           <Icon source={ErrorIcon} size={IconSize.Size16} marginRight={10} />
         )}
-        <Text typo={"SubText14Regular"} color={"white"}>
+        <Text typo={"Text14Bold"} color={"white"}>
           {message}
         </Text>
       </Styled.ToastWrapper>
