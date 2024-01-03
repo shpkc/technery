@@ -13,6 +13,7 @@ import {
   ButtonStyleVariant,
 } from "~/components/Button/Button.types";
 import { FaHeart } from "react-icons/fa";
+import { Palette } from "~/foundation";
 
 export const TrendServiceCard = forwardRef(
   (
@@ -46,8 +47,17 @@ export const TrendServiceCard = forwardRef(
               <Button
                 styleVariant={ButtonStyleVariant.Like}
                 size={ButtonSize.SMALL}
-                leftComponent={<FaHeart style={{ marginRight: "6px" }} />}
-                rightComponent={<Text typo={"Text14Bold"}>{likeCount}</Text>}
+                leftComponent={
+                  <FaHeart
+                    style={{ marginRight: "6px" }}
+                    color={Palette["black-origin"]}
+                  />
+                }
+                rightComponent={
+                  <Text typo={"Text14Bold"} color={"black-origin"}>
+                    {likeCount}
+                  </Text>
+                }
               />
             </Stack>
           </Flex>
