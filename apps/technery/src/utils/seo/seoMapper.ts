@@ -11,5 +11,10 @@ export const seoMapper = ({
     ...DEFAULT_SEO,
     title: `${title} | Technery`,
     description: `${description} | Technery`,
+    openGraph: {
+      ...DEFAULT_SEO.openGraph,
+      title: `${title} | Technery`,
+      description: `${description} | Technery`,
+    },
   };
 };
