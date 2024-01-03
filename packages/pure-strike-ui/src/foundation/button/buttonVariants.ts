@@ -11,9 +11,7 @@ const Primary = css`
     color: ${Palette["gray-400"]};
   }
   &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid ${Palette["black-origin"]};
+    background-color: ${Palette["black-origin-80"]};
   }
 `;
 
@@ -39,6 +37,12 @@ const Like = css`
     background-color: ${Palette["red-300"]};
     color: white;
     transition: 0.1s ease-in-out;
+    p {
+      color: white;
+    }
+    svg {
+      fill: white;
+    }
   }
 `;
 
