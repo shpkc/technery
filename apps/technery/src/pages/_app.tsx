@@ -12,6 +12,13 @@ import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GlobalStyle } from "src/styles/globals";
+import { CSSProp } from "styled-components";
+
+declare module "react" {
+  interface Attributes {
+    css?: CSSProp;
+  }
+}
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,14 +37,19 @@ export default function App({ Component, pageProps }: AppProps) {
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
       />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', ${process.env.NEXT_PUBLIC_GA_ID});
-        `}
-      </Script>
+      <Script
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+        }}
+      />
       {seoData ? <NextSeo {...seoData} /> : <NextSeo {...DEFAULT_SEO} />}
       <StyleSheetManager
         enableVendorPrefixes
