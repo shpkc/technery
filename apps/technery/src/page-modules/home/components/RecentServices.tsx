@@ -7,7 +7,11 @@ import { supabase } from "src/utils/apis/supabase/supabase";
 export const RecentServices = () => {
   const { data }: { data } = useQuery({
     queryKey: ["services"],
-    queryFn: () => supabase.from("services").select(),
+    queryFn: () =>
+      supabase
+        .from("services")
+        .select()
+        .order("created_at", { ascending: false }),
   });
 
   return (
