@@ -54,9 +54,11 @@ export const SideBar = ({ closeSideBar }: { closeSideBar: () => void }) => {
                 borderColor={"gray-200"}
                 borderWidth={1}
                 margin={"0 0 12px 0"}
-                onClick={(item) => onClickMenu(item)}
+                onClick={() => onClickMenu(item)}
               >
-                <Text typo={"Text20Bold"}>{item.title}</Text>
+                <Text typo={"Text20Bold"} cursor={"pointer"}>
+                  {item.title}
+                </Text>
               </Stack>
             ))}
             <FaInstagram

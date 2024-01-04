@@ -34,7 +34,7 @@ const ServiceDetail = () => {
         .single(),
   });
 
-  if (!isFetching) {
+  if (isFetching) {
     return <ServiceDetailLoading />;
   }
 
