@@ -1,1 +1,1 @@
-export const GITHUB_LINK = "https://github.com/shpkc/technery";
+export const INSTAGRAM_LINK = "https://www.instagram.com/technery_official/";
