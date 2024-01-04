@@ -4,9 +4,11 @@ import { Grid, Spacer, Stack, Text, TopicCard } from "pure-strike-ui";
 import { supabase } from "src/utils/apis/supabase/supabase";
 import { TopicInterface } from "src/types/topics";
 import React from "react";
+import BeatLoader from "react-spinners/BeatLoader";
+import { Palette } from "~foundation";
 
 export const TrendingTopics = () => {
-  const { data }: { data } = useQuery({
+  const { data, isFetching }: { data; isFetching } = useQuery({
     queryKey: ["topics"],
     queryFn: () => supabase.from("topics").select().eq("isTrend", true),
   });
@@ -16,6 +18,9 @@ export const TrendingTopics = () => {
         TRENDING TOPICS
       </Text>
       <Spacer height={["16px", "32px"]} />
+      {isFetching && (
+        <BeatLoader color={Palette["gray-500"]} style={{ margin: "0 auto" }} />
+      )}
       <Grid
         gridTemplateColums={["repeat(1,1fr)", "repeat(4, 1fr)"]}
         gridAutoFlow={["column", "row"]}
