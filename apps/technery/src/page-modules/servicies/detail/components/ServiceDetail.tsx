@@ -18,6 +18,7 @@ import {
   ButtonStyleVariant,
 } from "~components/Button/Button.types";
 import { BsTagFill } from "react-icons/bs";
+import { ServiceDetailLoading } from "src/components/loading/ServiceDetailLoading";
 
 const ServiceDetail = () => {
   const {
@@ -33,8 +34,8 @@ const ServiceDetail = () => {
         .single(),
   });
 
-  if (isFetching) {
-    return <div />;
+  if (!isFetching) {
+    return <ServiceDetailLoading />;
   }
 
   const serviceData: ServicesInterface = data.data || {};
