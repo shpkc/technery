@@ -3,15 +3,31 @@ import { Stack, Text, Flex, Spacer, Responsive } from "pure-strike-ui";
 import { ZIndex } from "~foundation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FiFlag } from "react-icons/fi";
-
-const MENU_LIST = [
-  { title: "Topics", link: "/topics" },
-  { title: "Tech Blogs", link: "/techBlogs" },
-  // { title: "News Letter", link: "/newsLetter" },
-  { title: "Submit", link: "/submit" },
-];
+import React from "react";
+import { SideBar } from "./SideBar";
+import { useRouter } from "next/navigation";
+import { MENU_LIST } from "src/constants/menu";
+import { FaInstagram } from "react-icons/fa";
+import { INSTAGRAM_LINK } from "src/constants/link";
 
 export const Header = () => {
+  const router = useRouter();
+  const [isSideBarOpen, setIsSideBarOpen] = React.useState<boolean>(false);
+  const openSideBar = () => {
+    setIsSideBarOpen(true);
+  };
+  const closeSideBar = () => {
+    setIsSideBarOpen(false);
+  };
+
+  const onClickMenu = (item) => {
+    const { link, onClick } = item;
+    if (onClick) {
+      return onClick();
+    }
+    return router.push(link);
+  };
+
   return (
     <Stack
       position={"fixed"}
@@ -36,16 +52,32 @@ export const Header = () => {
         </Link>
         <Responsive
           mobileComponent={
-            <GiHamburgerMenu size={24} style={{ cursor: "pointer" }} />
+            <Stack>
+              <GiHamburgerMenu
+                size={24}
+                style={{ cursor: "pointer" }}
+                onClick={openSideBar}
+              />
+              {isSideBarOpen && <SideBar closeSideBar={closeSideBar} />}
+            </Stack>
           }
           desktopComponent={
-            <Flex direction={"row"} gap={24}>
+            <Flex direction={"row"} gap={24} alignment={"center"}>
+              <FaInstagram
+                size={24}
+                style={{ cursor: "pointer" }}
+                onClick={() => window.open(INSTAGRAM_LINK)}
+              />
               {MENU_LIST.map((item) => (
-                <Link href={item.link} key={item.title}>
-                  <Text cursor={"pointer"} typo={"Text16Medium"} hover={true}>
-                    {item.title}
-                  </Text>
-                </Link>
+                <Text
+                  cursor={"pointer"}
+                  typo={"Text16Medium"}
+                  hover={true}
+                  onClick={() => onClickMenu(item)}
+                  key={item.title}
+                >
+                  {item.title}
+                </Text>
               ))}
             </Flex>
           }
