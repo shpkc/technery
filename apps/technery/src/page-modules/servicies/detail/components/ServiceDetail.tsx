@@ -34,6 +34,15 @@ const ServiceDetail = () => {
         .single(),
   });
 
+  // NOTE : id에서 supabase bucket iamges folder 이미지 가져오기
+  const { data: bucketData }: { data } = useQuery({
+    queryKey: ["buckets", id],
+    queryFn: () =>
+      supabase.storage.from("services").list(`${id}/images`, {
+        sortBy: { column: "created_at", order: "desc" },
+      }),
+  });
+
   if (isFetching) {
     return <ServiceDetailLoading />;
   }
@@ -55,8 +64,15 @@ const ServiceDetail = () => {
         </Stack>
         <Spacer height={["40px", "60px"]} />
         <Flex gap={20} overflow={"scroll"}>
-          {serviceData.images.map((item) => (
-            <Image src={item.url} key={item.url} height={"285px"} />
+          {bucketData?.data.map((item) => (
+            <Image
+              src={
+                process.env.NEXT_PUBLIC_IMG_BASE +
+                `/services/${id}/images/${item.name}`
+              }
+              key={item.url}
+              height={"285px"}
+            />
           ))}
         </Flex>
         <Spacer height={["40px", "60px"]} />
